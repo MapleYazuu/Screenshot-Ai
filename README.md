@@ -1,4 +1,4 @@
-[English](README_EN.md) | 简体中文
+# [English](README_EN.md) | 简体中文
 # Screenshot AI · 截图 AI 助手
 
 > 一个常驻桌面的 Android 悬浮球：**点一下截图，AI 流式解答**。截图 → 发送给大模型 → 答案逐字出现在悬浮小窗里，不打断你正在做的事。
