@@ -59,6 +59,12 @@
 | **历史 History** | 打开 Room 历史记录页，回看历次提问、截图缩略图与 AI 回答 |
 | **设置 Settings** | 悬浮球外观、预设指令、模型与 API Key、图片质量、开机自启等 |
 
+## 📱 界面预览
+
+| 主页 |  演示 | 按钮 | 按钮展开 | 软件图标 |
+| :---: | :---: | :---: | :---: | :---: |
+| <img src="docs/images/home.jpg" width="250" alt="主页" /> | <img src="docs/images/effect.jpg" width="250" alt="效果" /> | <img src="docs/images/button.jpg" width="250" alt="按钮" /> | <img src="docs/images/buttonunfold.jpg" width="250" alt="按钮展开" /> | <img src="docs/images/icon.png" width="250" alt="软件图标" /> |
+
 ### 功能清单
 
 - 🎈 **桌面常驻悬浮球** —— 前台服务保活，不占用最近任务，随时可用。
