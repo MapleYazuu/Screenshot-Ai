@@ -79,33 +79,6 @@
 
 ---
 
-## 演示
-
-> 📷 **占位说明**：下方图片尚未提交到仓库。请把你的真机截图 / 录屏按 `docs/images/` 目录下的
-> [命名约定](docs/images/README.md) 放好，README 会自动显示它们。
-
-| 主界面 | 长按展开菜单 | 结果小窗 |
-| --- | --- | --- |
-| ![主界面](docs/images/home.png) | ![长按展开 4 个操作按钮](docs/images/overlay-actions.png) | ![流式结果小窗](docs/images/result-window.png) |
-
-| 历史记录 | 设置页 | 完整流程演示 |
-| --- | --- | --- |
-| ![历史记录](docs/images/history.png) | ![设置页](docs/images/settings.png) | ![演示 GIF](docs/images/demo.gif) |
-
-需要的 6 个文件（放到 `docs/images/`）：
-
-```text
-docs/images/
-├── home.png             # 主界面
-├── overlay-actions.png  # 长按悬浮球展开的 4 个操作按钮
-├── result-window.png    # AI 流式回答的悬浮结果小窗
-├── history.png          # Room 历史记录页
-├── settings.png         # 设置页（模型 / API Key / 预设）
-└── demo.gif             # 一段 5~15 秒的完整操作录屏
-```
-
----
-
 ## 架构
 
 ```mermaid
