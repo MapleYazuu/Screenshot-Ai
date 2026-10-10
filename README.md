@@ -1,8 +1,8 @@
-# [English](README_EN.md) | 简体中文
+## 😋😋😋点击立即下载------>[![Download APK](https://img.shields.io/badge/Download-v3.1.0-blue)](https://github.com/MapleYazuu/Screenshot-Ai/releases)<------点击立即下载😋😋😋
 # Screenshot AI · 截图 AI 助手
 
 > 一个常驻桌面的 Android 悬浮球：**点一下截图，AI 流式解答**。截图 → 发送给大模型 → 答案逐字出现在悬浮小窗里，不打断你正在做的事。
-## 😋😋😋点击立即下载------>[![Download APK](https://img.shields.io/badge/Download-v3.1.0-blue)](https://github.com/MapleYazuu/Screenshot-Ai/releases)<------点击立即下载😋😋😋
+
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Android 11+](https://img.shields.io/badge/Android-11%2B%20(API%2030)-3DDC84.svg?logo=android&logoColor=white)](https://developer.android.com/about/versions/11)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-7F52FF.svg?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
@@ -49,7 +49,7 @@
 | 操作 | 行为 |
 | --- | --- |
 | **单击悬浮球** | 立即截取当前屏幕 → 用**当前预设指令**发给 AI → 答案**流式**渲染进悬浮结果小窗 |
-| **长按悬浮球** | 弹开 4 个操作按钮：**截图 Capture** / **录入 Compose** / **历史 History** / **设置 Settings** |
+| **长按悬浮球** | 弹开 4 个操作按钮：**截图 Capture** / **选择指令 Preset** / **历史 History** / **设置 Settings** |
 | **拖拽悬浮球** | 自由移动到屏幕任意边缘，位置会被记住 |
 
 长按后的 4 个动作：
@@ -57,7 +57,7 @@
 | 按钮 | 说明 |
 | --- | --- |
 | **截图 Capture** | 手动触发一次截图 + AI 问答，等价于单击悬浮球 |
-| **录入 Compose** | 手动输入／粘贴文字，走纯文本问答，不消耗截图 |
+| **选择指令 Preset** | 打开预设指令列表，点选即设为默认指令（列表底部可「+ 新建指令」） |
 | **历史 History** | 打开 Room 历史记录页，回看历次提问、截图缩略图与 AI 回答 |
 | **设置 Settings** | 悬浮球外观、预设指令、模型与 API Key、图片质量、开机自启等 |
 
@@ -69,12 +69,12 @@
 
 ```text
 docs/images/
-├── home.png             # 主界面
-├── overlay-actions.png  # 长按悬浮球展开的 4 个操作按钮
-├── result-window.png    # AI 流式回答的悬浮结果小窗
-├── history.png          # Room 历史记录页
-├── settings.png         # 设置页（模型 / API Key / 预设）
-└── demo.gif             # 一段 5~15 秒的完整操作录屏
+├── home.jpg          # 主界面
+├── effect.jpg        # 效果演示
+├── button.jpg        # 悬浮球按钮
+├── buttonunfold.jpg  # 长按展开的 4 个操作按钮
+├── icon.png          # 软件图标
+└── README.md         # 演示截图 / GIF 的提交约定
 ```
 
 ### 功能清单
@@ -85,7 +85,7 @@ docs/images/
 - 🔤 **本地 OCR 降级** —— 不支持视觉的模型自动改用 **ML Kit 中文文字识别**，把提取出的文字发给模型，纯文本模型也能用。
 - ⚡ **SSE 流式输出** —— 基于 OkHttp 手写 SSE 解析，答案逐字上屏，不用等整段生成完。
 - 🔌 **BYOK 多厂商** —— 内置 **6 家** Provider（DeepSeek / OpenAI / Google Gemini / Anthropic Claude / 通义千问 / 豆包），全部支持自定义 Base URL。
-- 🧩 **预设指令** —— 内置 5 条预设（截图总结 / 翻译成中文 / 解释代码 / 提取文字 / 解题·答疑），可自行增删改，默认使用第一条。
+- 🧩 **预设指令** —— 内置 5 条预设（翻译 / 总结 / 解释代码 / 提取文字 / 解题答疑），可自行增删改，默认使用第一条。
 - 🗂️ **Room 历史** —— 每次问答（问题、截图、回答、模型、时间）本地落库，可检索、可回看、可删除。
 - ⚙️ **DataStore 配置** —— 所有偏好（模型、预设、悬浮球位置、图片质量、流式开关）基于 DataStore Preferences。
 - 🔐 **密钥加密** —— API Key 经 Android Keystore 主密钥 **AES256-GCM** 加密后写入 EncryptedSharedPreferences，明文永不落盘。
@@ -103,7 +103,7 @@ docs/images/
 flowchart TD
     U["用户点击悬浮球<br/>单击 = 截图问答 / 长按 = 展开菜单"] --> FS["FloatingService<br/>前台服务 + 悬浮球生命周期"]
     FS -->|"单击：触发截图问答"| SCS["ScreenCaptureService<br/>AccessibilityService · canTakeScreenshot"]
-    FS -->|"长按：弹开 4 个操作按钮"| OM1["OverlayManager<br/>截图 / 录入 / 历史 / 设置"]
+    FS -->|"长按：弹开 4 个操作按钮"| OM1["OverlayManager<br/>截图 / 选择指令 / 历史 / 设置"]
 
     SCS --> IMG["截取当前屏幕位图"]
     IMG --> VISION{"当前模型<br/>supportsVision ?"}
@@ -192,26 +192,32 @@ screenshot-ai/
 │       │   │   │   ├── AiException.kt        # 统一异常（HttpError / NetworkError / ParseError …）
 │       │   │   │   ├── AiProviderRegistry.kt # Provider 注册与 (Provider, Model) 解析
 │       │   │   │   ├── net/                  # HttpClient.kt · UrlBuilder.kt · SseReader.kt
-│       │   │   │   └── providers/            # 6 个内置 Provider + OpenAI 兼容基类
+│       │   │   │   └── providers/            # 6 个内置 Provider + OpenAI 兼容基类 + 自定义模型
 │       │   │   │       ├── OpenAiCompatibleProvider.kt  # 兼容协议基类（请求拼装 / 鉴权 / SSE 解析）
 │       │   │   │       ├── DeepSeekProvider.kt
 │       │   │   │       ├── OpenAiProvider.kt
 │       │   │   │       ├── GeminiProvider.kt
 │       │   │   │       ├── AnthropicProvider.kt         # 唯一独立实现：/v1/messages
 │       │   │   │       ├── QwenProvider.kt
-│       │   │   │       └── DoubaoProvider.kt
+│       │   │   │       ├── DoubaoProvider.kt
+│       │   │   │       └── CustomProvider.kt            # 自定义模型（BYOK 自建网关）
 │       │   │   ├── service/                  # 后台常驻服务
 │       │   │   │   ├── FloatingService.kt        # 悬浮球前台服务
 │       │   │   │   ├── ScreenCaptureService.kt   # 无障碍截图服务（canTakeScreenshot）
 │       │   │   │   ├── OverlayManager.kt         # 所有悬浮窗口的创建与调度
+│       │   │   │   ├── FloatingToolbarTileService.kt   # 下拉快捷开关（Quick Settings Tile）
+│       │   │   │   ├── FloatingServiceController.kt    # 悬浮工具栏启停统一入口
 │       │   │   │   └── BootReceiver.kt           # 开机自启（可选）
-│       │   │   ├── overlay/                  # 6 个悬浮窗 View
-│       │   │   │   ├── OverlayBubbleView.kt          # 悬浮球本体与拖拽
-│       │   │   │   ├── OverlayActionPanelView.kt     # 长按展开的 4 个操作按钮
-│       │   │   │   ├── OverlayResultWindowView.kt    # 流式结果小窗
-│       │   │   │   ├── OverlayInputPanelView.kt      # 手动录入输入框
-│       │   │   │   ├── OverlayHistoryPanelView.kt    # 悬浮历史面板
-│       │   │   │   └── OverlayCapturePreviewView.kt  # 截图预览
+│       │   │   ├── overlay/                  # 悬浮窗 View（统一手势底座 WindowGestureBinder）
+│       │   │   │   ├── OverlayBubbleView.kt          # 悬浮球本体
+│       │   │   │   ├── OverlayBubbleContainerView.kt # 悬浮球窗口容器
+│       │   │   │   ├── OverlayActionPanelView.kt     # 长按展开的 4 个操作按钮（独立窗口）
+│       │   │   │   ├── OverlayResultWindowView.kt    # 流式结果小窗（Markdown 渲染 + 追问）
+│       │   │   │   ├── OverlayHistoryPanelView.kt    # 悬浮历史 / 选择指令面板
+│       │   │   │   ├── OverlayCapturePreviewView.kt  # 截图预览
+│       │   │   │   ├── OverlayPresetCreateView.kt    # 「新建指令」二级弹窗
+│       │   │   │   ├── WindowGestureBinder.kt        # 拖拽 / 缩放统一手势状态机
+│       │   │   │   └── MaxHeightScrollView.kt        # 高度自适应滚动容器
 │       │   │   ├── ui/                       # Compose 主界面
 │       │   │   │   ├── main/                 # MainActivity / MainScreen / MainViewModel
 │       │   │   │   ├── history/              # HistoryActivity / HistoryScreen / HistoryViewModel
@@ -219,7 +225,7 @@ screenshot-ai/
 │       │   │   │   ├── settings/             # SettingsActivity / SettingsScreen / SettingsViewModel
 │       │   │   │   ├── about/                # AboutActivity / AboutScreen / AboutViewModel
 │       │   │   │   ├── theme/                # Theme.kt · Shape.kt · Type.kt
-│       │   │   │   └── common/               # CommonComponents.kt · PageTransitions.kt
+│       │   │   │   └── common/               # CommonComponents.kt · LifecycleAwareDialog.kt
 │       │   │   ├── data/                     # 数据层
 │       │   │   │   ├── db/                   # AppDatabase.kt · HistoryDao.kt · HistoryRepositoryImpl.kt
 │       │   │   │   ├── preset/               # PresetDao.kt · PresetRepositoryImpl.kt
@@ -232,15 +238,21 @@ screenshot-ai/
 │       │   │       ├── ImageUtils.kt            # 缩放 / 压缩 / Base64 编码
 │       │   │       ├── OcrUtils.kt              # ML Kit 中文文字识别
 │       │   │       ├── PermissionUtils.kt       # 悬浮窗 / 通知 / 电池白名单跳转
-│       │   │       ├── FloatingDragListener.kt  # 悬浮球拖拽与吸边
+│       │   │       ├── FloatingDragListener.kt  # 悬浮球拖拽与吸边手势
+│       │   │       ├── MarkdownRenderer.kt      # Markwon 富文本渲染统一出口
+│       │   │       ├── Haptics.kt               # 轻触 / 长按振动反馈
+│       │   │       ├── LocaleManager.kt         # 多语言切换
+│       │   │       ├── AiErrorMessages.kt       # AI 异常 → 本地化文案
+│       │   │       ├── PromptTemplates.kt       # 系统提示词模板
 │       │   │       ├── UpdateChecker.kt         # 版本检查
 │       │   │       ├── TimeUtils.kt             # 时间格式化
-│       │   │       └── ToastUtils.kt            # 统一提示
-│       │   ├── res/                          # 资源：布局 XML / 图标 / 主题 / 中英文案
+│       │   │       ├── ToastUtils.kt            # 统一提示
+│       │   │       └── UiPx.kt                  # dp → px 统一换算
+│       │   ├── res/                          # 资源：布局 XML / 图标 / 主题 / 多语言文案（zh/en/ja/ko/ru）
 │       │   └── AndroidManifest.xml
 │       └── test/java/com/screenshot/ai/      # 单元测试
 │           ├── ai/ProviderRegistryTest.kt · ai/SseParserTest.kt
-│           ├── data/PresetRepositoryLogicTest.kt
+│           ├── data/PresetRepositoryLogicTest.kt · data/CustomModelConfigTest.kt
 │           └── util/ImageUtilsTest.kt · TimeUtilsTest.kt · UpdateCheckerTest.kt
 ├── docs/
 │   ├── byok.md              # BYOK 模式详解与成本控制
@@ -423,18 +435,18 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.9-bin.zip
 
 ## 内置预设指令
 
-内置 5 条预设，**第一条「截图总结」为默认预设**。可在设置页新增、编辑、删除、排序，
-也可在悬浮菜单的「录入」里临时切换。
+内置 5 条预设，**第一条「翻译」为默认预设**。可在设置页新增、编辑、删除、排序，
+也可在悬浮菜单的「选择指令」里临时切换。
 
 | # | 名称 | 作用 | 典型场景 |
 | --- | --- | --- | --- |
-| 1 | **截图总结**（默认） | 概括当前屏幕的主要内容并给出要点 | 长文、公告、聊天记录快速抓重点 |
-| 2 | **翻译成中文** | 识别屏幕中的外文并翻译为简体中文 | 英文文档、日文界面、外语 App |
-| 3 | **解释代码** | 解释截图中代码的作用、逻辑与潜在问题 | 看开源代码、读报错堆栈 |
-| 4 | **提取文字** | 只做文字提取，不做额外解读 | 复制不可选中的文字、票据信息 |
-| 5 | **解题·答疑** | 逐步分析题目并给出解答思路 | 数学题、选择题、作业辅导 |
+| 1 | **翻译**（默认） | 识别截图中的全部文字并翻译成中文 | 英文文档、日文界面、外语 App |
+| 2 | **总结** | 总结截图主要内容，提取关键信息 | 长文、公告、聊天记录快速抓重点 |
+| 3 | **解释代码** | 说明截图中代码的功能与实现方式 | 看开源代码、读报错堆栈 |
+| 4 | **提取文字** | 原样提取文字并保持段落格式，不做额外解读 | 复制不可选中的文字、票据信息 |
+| 5 | **解题答疑** | 先给解题思路，再给详细步骤和最终答案 | 数学题、选择题、作业辅导 |
 
-> 使用非视觉模型时，预设 2 / 4 依然可用 —— 输入会由 ML Kit 本地 OCR 提供。
+> 使用非视觉模型时，预设 1 / 4 依然可用 —— 输入会由 ML Kit 本地 OCR 提供。
 
 ---
 
@@ -450,10 +462,10 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.9-bin.zip
 | `INTERNET` | 通过 HTTPS 访问你配置的 AI 厂商接口 | ✅ **必需** |
 | `RECEIVE_BOOT_COMPLETED` | 开机后自动恢复悬浮球 | ⭕ 可选（设置页开关） |
 | `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS` | 引导加入电池优化白名单，降低后台被杀概率 | ⭕ 可选 |
-| `ACCESS_NETWORK_STATE` | 请求前判断网络可用性，给出更友好的错误提示 | ⭕ 可选 |
+| `QUERY_ALL_PACKAGES` | 跳转各厂商设置页时查询组件可见性 | ✅ 已声明（带 `tools:ignore`） |
 
 **不申请**的权限（可自行核对 `AndroidManifest.xml`）：读写外部存储 / 相册、读取通讯录、定位、
-读取短信、`QUERY_ALL_PACKAGES`、`READ_LOGS` 等。截图全程只写应用私有目录。
+读取短信、`READ_LOGS` 等。截图全程只写应用私有目录。
 
 ---
 
