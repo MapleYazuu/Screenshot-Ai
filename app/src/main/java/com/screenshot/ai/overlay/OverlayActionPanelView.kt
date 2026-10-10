@@ -143,12 +143,15 @@ class OverlayActionPanelView(
         visibility = View.VISIBLE
         if (!animate) return
 
+        // 缩放锚点用固定尺寸的一半（56dp/2）：首次展开时窗口尚未完成 layout，
+        // button.width 还是 0，用它会退化成从左上角缩放；固定值保证始终从按钮中心放大。
+        val pivot = context.dp(SATELLITE_BUTTON_DP) / 2f
         buttons().forEachIndexed { index, button ->
             button.alpha = 0f
             button.scaleX = 0.2f
             button.scaleY = 0.2f
-            button.pivotX = button.width / 2f
-            button.pivotY = button.height / 2f
+            button.pivotX = pivot
+            button.pivotY = pivot
             val animator =
                 button
                     .animate()
