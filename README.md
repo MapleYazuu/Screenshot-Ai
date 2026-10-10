@@ -1,3 +1,4 @@
+## 😋😋😋点击立即下载------>[![Download APK](https://img.shields.io/badge/Download-v3.1.0-blue)](https://github.com/MapleYazuu/Screenshot-Ai/releases)<------点击立即下载😋😋😋
 # Screenshot AI · 截图 AI 助手
 
 > 一个常驻桌面的 Android 悬浮球：**点一下截图，AI 流式解答**。截图 → 发送给大模型 → 答案逐字出现在悬浮小窗里，不打断你正在做的事。
@@ -7,6 +8,7 @@
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-7F52FF.svg?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
 [![Compose](https://img.shields.io/badge/UI-Jetpack%20Compose-4285F4.svg?logo=jetpackcompose&logoColor=white)](https://developer.android.com/jetpack/compose)
 [![Android CI](https://github.com/MapleYazuu/Screenshot-AI/actions/workflows/android.yml/badge.svg)](https://github.com/MapleYazuu/Screenshot-AI/actions/workflows/android.yml)
+[![Download APK](https://img.shields.io/badge/Download-v3.1.0-blue)](https://github.com/MapleYazuu/Screenshot-Ai/releases)
 
 <!--
   CI 徽章由 .github/workflows/android.yml 在 push 到 main 后自动生成。
@@ -64,6 +66,16 @@
 | 主页 |  演示 | 按钮 | 按钮展开 | 软件图标 |
 | :---: | :---: | :---: | :---: | :---: |
 | <img src="docs/images/home.jpg" width="250" alt="主页" /> | <img src="docs/images/effect.jpg" width="250" alt="效果" /> | <img src="docs/images/button.jpg" width="250" alt="按钮" /> | <img src="docs/images/buttonunfold.jpg" width="250" alt="按钮展开" /> | <img src="docs/images/icon.png" width="250" alt="软件图标" /> |
+
+```text
+docs/images/
+├── home.png             # 主界面
+├── overlay-actions.png  # 长按悬浮球展开的 4 个操作按钮
+├── result-window.png    # AI 流式回答的悬浮结果小窗
+├── history.png          # Room 历史记录页
+├── settings.png         # 设置页（模型 / API Key / 预设）
+└── demo.gif             # 一段 5~15 秒的完整操作录屏
+```
 
 ### 功能清单
 
