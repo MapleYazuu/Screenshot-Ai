@@ -61,9 +61,9 @@
 
 ## 📱 界面预览
 
-| 主页 |  演示 | 按钮 | 按钮展开 | 图标 |
+| 主页 |  演示 | 按钮 | 按钮展开 | 软件图标 |
 | :---: | :---: | :---: | :---: | :---: |
-| <img src="docs/images/home.jpg" width="250" alt="主页" /> | <img src="docs/images/effect.jpg" width="250" alt="效果" /> | <img src="docs/images/button.jpg" width="250" alt="按钮" /> | <img src="docs/images/buttonunfold.jpg" width="250" alt="按钮展开" /> | <img src="docs/images/icon.png" width="250" alt="按钮" /> |
+| <img src="docs/images/home.jpg" width="250" alt="主页" /> | <img src="docs/images/effect.jpg" width="250" alt="效果" /> | <img src="docs/images/button.jpg" width="250" alt="按钮" /> | <img src="docs/images/buttonunfold.jpg" width="250" alt="按钮展开" /> | <img src="docs/images/icon.png" width="250" alt="软件图标" /> |
 
 ### 功能清单
 
