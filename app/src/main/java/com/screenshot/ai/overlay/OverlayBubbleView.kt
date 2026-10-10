@@ -66,32 +66,6 @@ class OverlayBubbleView(
         this.alpha = alpha.coerceIn(0.3f, 1f)
     }
 
-    /**
-     * 贴边半隐藏时把可见部分整体推出屏幕。
-     *
-     * 不用 [setTranslationX] 的负值配合窗口外的做法，因为 TYPE_APPLICATION_OVERLAY
-     * 窗口超出屏幕的部分本身就被裁掉，只需要平移 View 内容即可达到「只露一半」的效果。
-     */
-    fun setHorizontalOffset(offsetPx: Float) {
-        translationX = offsetPx
-    }
-
-    /** 当前横向偏移（贴边动画的起点） */
-    fun currentHorizontalOffset(): Float = translationX
-
-    /**
-     * 恢复显示时必须撤销贴边偏移。
-     *
-     * 重写而不是让调用方记得调用 [setHorizontalOffset]：`visibility` 会被多处代码
-     * （动画、截屏隐藏、面板切换）改动，把复位逻辑收在这里才不会有漏改的分支。
-     */
-    override fun setVisibility(visibility: Int) {
-        super.setVisibility(visibility)
-        if (visibility == VISIBLE) {
-            translationX = 0f
-        }
-    }
-
     private fun dpToPx(dp: Float): Float =
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.displayMetrics)
 

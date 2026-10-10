@@ -7,7 +7,7 @@
 # ============================================================================
 
 # ---------- 通用：行号 / 注解 / 泛型签名 ----------
-# 注解与泛型签名是 Retrofit / kotlinx.serialization / Room 反射查找的根基，缺一不可
+# 注解与泛型签名是 kotlinx.serialization / Room 反射查找的根基，缺一不可
 -keepattributes SourceFile,LineNumberTable
 -keepattributes *Annotation*, InnerClasses, EnclosingMethod
 -keepattributes Signature, Exceptions

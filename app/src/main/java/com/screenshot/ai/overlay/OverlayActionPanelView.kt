@@ -81,15 +81,17 @@ class OverlayActionPanelView(
         applySatelliteStyle(binding.actionHistory)
         applySatelliteStyle(binding.actionSettings)
 
-        // 四角布局：中心留空（悬浮球在菜单窗口下方透过中心可见），按钮固定在四角
+        // 四角布局：中心留空（悬浮球在菜单窗口下方透过中心可见），按钮固定在四角。
+        // 尺寸关系（2026-10 二次紧凑化）：窗口 180dp、按钮中心距球心 51dp，
+        // 球与按钮边缘间隙 ≈ 51×√2 − 56 ≈ 16dp（上版 29dp，再收紧约 45%）。
         val buttonPx = context.dp(SATELLITE_BUTTON_DP)
         val half = buttonPx / 2
         val centers =
             listOf(
-                context.dp(38) to context.dp(38),
-                context.dp(182) to context.dp(38),
-                context.dp(38) to context.dp(182),
-                context.dp(182) to context.dp(182),
+                context.dp(39) to context.dp(39),
+                context.dp(141) to context.dp(39),
+                context.dp(39) to context.dp(141),
+                context.dp(141) to context.dp(141),
             )
         buttons().forEachIndexed { index, button ->
             button.layoutParams =
@@ -262,7 +264,7 @@ class OverlayActionPanelView(
 
     companion object {
         /** 菜单窗口固定边长（dp）：中心留空给悬浮球，四角放四个 56dp 按钮 */
-        const val RADIAL_SIZE_DP = 220
+        const val RADIAL_SIZE_DP = 180
 
         /** 卫星按钮固定边长（dp） */
         private const val SATELLITE_BUTTON_DP = 56

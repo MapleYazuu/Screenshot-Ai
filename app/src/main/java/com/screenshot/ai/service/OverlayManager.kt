@@ -172,9 +172,6 @@ class OverlayManager(
     /** 悬浮球与操作面板的宿主容器：WindowManager 只 add 这一个窗口 */
     private var containerView: OverlayBubbleContainerView? = null
 
-    /** 容器内的悬浮球（只读访问器，外部一律通过容器操作） */
-    private val bubbleView: OverlayBubbleView? get() = containerView?.bubble
-
     /** 容器窗口参数：窗口位置 = 容器左上角（球/面板的相对位置由容器内部布局决定） */
     private var bubbleParams: WindowManager.LayoutParams? = null
 
@@ -238,16 +235,6 @@ class OverlayManager(
     init {
         bubbleDragListener = buildBubbleDragListener()
     }
-
-    // ---------------------------------------------------------------------
-    // 对外状态
-    // ---------------------------------------------------------------------
-
-    /** 悬浮球是否已经显示（悬浮服务存活期间恒为 true） */
-    val isShown: Boolean get() = bubbleView != null
-
-    /** 结果窗口当前是否可见 */
-    val isResultShown: Boolean get() = resultView != null
 
     // ---------------------------------------------------------------------
     // 悬浮球生命周期
@@ -909,11 +896,6 @@ class OverlayManager(
         resultView = null
         resultParams = null
         resultMoveListener = null
-    }
-
-    /** 关闭所有面板并让结果窗口的 Job 被取消（由 FloatingService 在不需要结果时调用） */
-    fun dismissResult() {
-        hideResult()
     }
 
     // ---------------------------------------------------------------------
