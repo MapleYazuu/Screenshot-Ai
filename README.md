@@ -65,6 +65,16 @@
 | :---: | :---: | :---: | :---: | :---: |
 | <img src="docs/images/home.jpg" width="250" alt="主页" /> | <img src="docs/images/effect.jpg" width="250" alt="效果" /> | <img src="docs/images/button.jpg" width="250" alt="按钮" /> | <img src="docs/images/buttonunfold.jpg" width="250" alt="按钮展开" /> | <img src="docs/images/icon.png" width="250" alt="软件图标" /> |
 
+```text
+docs/images/
+├── home.png             # 主界面
+├── overlay-actions.png  # 长按悬浮球展开的 4 个操作按钮
+├── result-window.png    # AI 流式回答的悬浮结果小窗
+├── history.png          # Room 历史记录页
+├── settings.png         # 设置页（模型 / API Key / 预设）
+└── demo.gif             # 一段 5~15 秒的完整操作录屏
+```
+
 ### 功能清单
 
 - 🎈 **桌面常驻悬浮球** —— 前台服务保活，不占用最近任务，随时可用。
