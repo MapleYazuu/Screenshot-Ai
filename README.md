@@ -1,4 +1,4 @@
-## 😋😋😋点击立即下载------------>[![Download APK](https://img.shields.io/badge/Download-v3.1.0-blue)](https://github.com/MapleYazuu/Screenshot-Ai/releases)<------------点击立即下载😋😋😋
+## 😋😋😋点击立即下载------>[![Download APK](https://img.shields.io/badge/Download-v3.1.0-blue)](https://github.com/MapleYazuu/Screenshot-Ai/releases)<------点击立即下载😋😋😋
 # Screenshot AI · 截图 AI 助手
 
 > 一个常驻桌面的 Android 悬浮球：**点一下截图，AI 流式解答**。截图 → 发送给大模型 → 答案逐字出现在悬浮小窗里，不打断你正在做的事。
@@ -8,7 +8,7 @@
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-7F52FF.svg?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
 [![Compose](https://img.shields.io/badge/UI-Jetpack%20Compose-4285F4.svg?logo=jetpackcompose&logoColor=white)](https://developer.android.com/jetpack/compose)
 [![Android CI](https://github.com/MapleYazuu/Screenshot-AI/actions/workflows/android.yml/badge.svg)](https://github.com/MapleYazuu/Screenshot-AI/actions/workflows/android.yml)
-[![Download APK](https://img.shields.io/badge/Download-v3.1.0-blue)](https://github.com/MapleYazuu/Screenshot-Ai/releases)<---点这个也可以哦😎😎😎
+[![Download APK](https://img.shields.io/badge/Download-v3.1.0-blue)](https://github.com/MapleYazuu/Screenshot-Ai/releases)
 
 <!--
   CI 徽章由 .github/workflows/android.yml 在 push 到 main 后自动生成。
