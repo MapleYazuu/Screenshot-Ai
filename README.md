@@ -1,8 +1,8 @@
-## 😋😋😋点击立即下载------>[![Download APK](https://img.shields.io/badge/Download-v3.1.0-blue)](https://github.com/MapleYazuu/Screenshot-Ai/releases)<------点击立即下载😋😋😋
+[English](README_EN.md) | 简体中文
 # Screenshot AI · 截图 AI 助手
 
 > 一个常驻桌面的 Android 悬浮球：**点一下截图，AI 流式解答**。截图 → 发送给大模型 → 答案逐字出现在悬浮小窗里，不打断你正在做的事。
-
+## 😋😋😋点击立即下载------>[![Download APK](https://img.shields.io/badge/Download-v3.1.0-blue)](https://github.com/MapleYazuu/Screenshot-Ai/releases)<------点击立即下载😋😋😋
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Android 11+](https://img.shields.io/badge/Android-11%2B%20(API%2030)-3DDC84.svg?logo=android&logoColor=white)](https://developer.android.com/about/versions/11)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-7F52FF.svg?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
