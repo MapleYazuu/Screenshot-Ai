@@ -1,0 +1,88 @@
+name: ✨ 功能建议
+description: 提出一个新功能或改进建议
+title: "[FEAT] "
+labels:
+  - enhancement
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的建议！在填写之前请先确认：
+
+        - 已搜索过 [已有 Issue](https://github.com/MapleYazuu/Screenshot-AI/issues)，没有相同的建议。
+        - 建议符合项目定位：**本地优先、BYOK、无云端中转、无账号体系**。
+          涉及云端同步、内购、账号登录、统计/广告 SDK 的提议通常不会被接受。
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: 提交前自查
+      options:
+        - label: 我已搜索过现有 Issue，确认这不是重复建议
+          required: true
+        - label: 该建议符合项目定位（本地优先、BYOK、无需云端账号）
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你遇到了什么问题？
+      description: 描述当前的不便之处，而不是直接跳到解决方案
+      placeholder: 每次截图问答都会新建一条历史记录，翻找以前的记录很费劲……
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 期望的解决方案
+      description: 你希望这个功能长什么样？使用时怎么操作？
+      placeholder: 希望历史记录页支持按预设指令筛选，并能收藏常用记录
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 考虑过的替代方案
+      description: 你试过哪些变通办法？为什么它们不够好？
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 涉及的模块
+      description: 大致判断即可，不确定可以多选
+      multiple: true
+      options:
+        - 悬浮球 / 悬浮窗交互
+        - 截图与图片处理
+        - AI Provider / 模型支持
+        - 预设指令
+        - 历史记录
+        - 设置项
+        - 界面与主题
+        - 权限与后台保活
+        - 文档 / 构建 / CI
+        - 其他
+
+  - type: dropdown
+    id: willing_to_pr
+    attributes:
+      label: 你是否愿意自己提交 PR 实现它？
+      options:
+        - 愿意，我会提交 PR
+        - 愿意，但需要有人指导
+        - 暂时没有时间，仅提出建议
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息
+      description: 参考截图、竞品实现、相关 API 文档链接等
+    validations:
+      required: false

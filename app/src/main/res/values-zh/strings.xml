@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  简体中文字符串。英文基准（权威 key 集合）见 values/strings.xml。
+  任何未在此处定义的文案都会回退到英文，因此新增 key 必须先加英文。
+-->
+<resources>
+    <string name="app_name">截图 AI 助手</string>
+
+    <!-- ==================== 无障碍服务 ==================== -->
+    <string name="accessibility_service_label">截图 AI 助手 · 截屏服务</string>
+    <string name="accessibility_service_summary">用于在悬浮按钮被点击时截取屏幕内容</string>
+    <string name="accessibility_service_description">开启后，点击悬浮按钮即可截取当前屏幕并交给 AI 分析。本服务仅在你主动点击悬浮按钮时截屏，不会在后台自动采集屏幕内容，所有截图只保存在本机。</string>
+
+    <!-- ==================== 通知 ==================== -->
+    <string name="notif_channel_name">悬浮工具栏</string>
+    <string name="notif_channel_desc">保持悬浮工具栏常驻运行</string>
+    <string name="notif_title">截图 AI 助手正在运行</string>
+    <string name="notif_text">点击悬浮按钮即可截图提问</string>
+    <string name="notif_action_stop">停止</string>
+
+    <!-- ==================== 主页 ==================== -->
+    <string name="main_subtitle">截图即问，AI 即答</string>
+    <string name="main_section_switch">功能开关</string>
+    <string name="main_floating_title">悬浮工具栏</string>
+    <string name="main_floating_desc">开启后桌面常驻悬浮按钮：单击立即截图提问，长按展开截图 / 录入 / 历史 / 设置</string>
+    <string name="main_section_entry">功能入口</string>
+    <string name="main_entry_history">提问历史</string>
+    <string name="main_entry_preset">预设指令管理</string>
+    <string name="main_entry_about">关于 / GitHub</string>
+    <string name="main_version_format">版本 %1$s</string>
+    <string name="main_service_killed">悬浮服务已被系统回收，开关已复位</string>
+    <string name="main_settings">设置</string>
+    <string name="main_need_accessibility">截图依赖无障碍服务，点此开启</string>
+
+    <!-- ==================== 历史 ==================== -->
+    <string name="history_title">提问历史</string>
+    <string name="history_search_hint">搜索指令、提问或回复…</string>
+    <string name="history_filter">筛选</string>
+    <string name="history_filter_provider">按 Provider 筛选</string>
+    <string name="history_filter_model">按模型筛选</string>
+    <string name="history_filter_reset">重置</string>
+    <string name="history_filter_apply">应用</string>
+    <string name="history_empty">还没有提问记录</string>
+    <string name="history_empty_desc">点击悬浮按钮截个图，开始你的第一次提问</string>
+    <string name="history_deleted">已删除记录</string>
+    <string name="history_undo">撤销</string>
+    <string name="history_action_copy">复制</string>
+    <string name="history_action_delete">删除</string>
+    <string name="history_action_reask">重新提问</string>
+    <string name="history_action_share">分享</string>
+    <string name="history_label_prompt">提问内容</string>
+    <string name="history_label_reply">AI 回复</string>
+    <string name="history_label_screenshot">原始截图</string>
+    <string name="history_image_missing">截图文件已不存在</string>
+    <string name="history_copied">已复制到剪贴板</string>
+    <string name="history_clipboard_label_preset">预设指令</string>
+    <string name="history_clipboard_label_prompt">提问内容</string>
+    <string name="history_share_chooser">分享此记录</string>
+
+    <!-- ==================== 预设指令 ==================== -->
+    <string name="preset_title">预设指令</string>
+    <string name="preset_add">新增指令</string>
+    <string name="preset_edit">编辑指令</string>
+    <string name="preset_field_name">指令名称</string>
+    <string name="preset_field_prompt">Prompt 内容</string>
+    <string name="preset_field_icon">图标（可选，单个 Emoji）</string>
+    <string name="preset_set_default">设为默认指令</string>
+    <string name="preset_default_badge">默认</string>
+    <string name="preset_import_clipboard">从剪贴板导入</string>
+    <string name="preset_save">保存</string>
+    <string name="preset_cancel">取消</string>
+    <string name="preset_delete">删除</string>
+    <string name="preset_deleted">删除成功</string>
+    <string name="preset_empty">还没有预设指令，点击右下角 + 新建一条吧</string>
+    <string name="preset_builtin_hint">内置指令不可删除，可编辑后另存</string>
+    <string name="preset_error_name_empty">请填写指令名称</string>
+    <string name="preset_error_prompt_empty">请填写 Prompt 内容</string>
+    <string name="preset_clipboard_empty">剪贴板没有可用文本</string>
+
+    <!--
+      内置指令的提示词模板（发给模型的指令，并非界面文案）。
+      保持与界面语言一致：用户把界面切成中文，模型收到的也是中文指令；
+      输出语言另由 PromptTemplates.withReplyLanguageDirective 在末尾显式指定。
+    -->
+
+    <!-- ==================== 设置 ==================== -->
+    <string name="settings_title">设置</string>
+    <string name="settings_section_model">模型管理</string>
+    <string name="settings_section_floating">悬浮球配置</string>
+    <string name="settings_section_permission">权限管理</string>
+    <string name="settings_section_other">其他</string>
+    <string name="settings_default_model">默认模型</string>
+    <string name="settings_api_key">API Key</string>
+    <string name="settings_api_key_hint">粘贴你的 API Key</string>
+    <string name="settings_api_key_saved">已加密保存</string>
+    <string name="settings_clear_key">清除 Key</string>
+    <string name="settings_test_connection">测试连接</string>
+    <string name="settings_testing">正在测试…</string>
+    <string name="settings_test_ok">连接成功</string>
+    <string name="settings_test_fail">连接失败：%1$s</string>
+    <string name="settings_vision_supported">支持图片输入</string>
+    <string name="settings_vision_unsupported">不支持图片，将使用本地 OCR</string>
+    <string name="settings_base_url">接口地址</string>
+    <string name="settings_floating_alpha">悬浮球透明度</string>
+    <string name="settings_floating_edge">贴边自动半隐藏</string>
+    <string name="settings_low_quality">低质量模式（512px，更省 token）</string>
+    <string name="settings_language">语言</string>
+    <string name="settings_language_system">跟随系统</string>
+    <string name="settings_language_zh">简体中文</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_ja">日本語</string>
+    <string name="settings_language_ko">한국어</string>
+    <string name="settings_language_ru">Русский</string>
+    <string name="settings_language_hint">同时决定 AI 回复所使用的语言。</string>
+    <string name="settings_theme">主题</string>
+    <string name="settings_theme_system">跟随系统</string>
+    <string name="settings_theme_light">浅色</string>
+    <string name="settings_theme_dark">深色</string>
+    <string name="settings_about">关于 / GitHub</string>
+    <string name="settings_perm_accessibility">无障碍截屏</string>
+    <string name="settings_perm_accessibility_desc">截图功能依赖此权限</string>
+    <string name="settings_perm_overlay">悬浮窗权限</string>
+    <string name="settings_perm_overlay_desc">显示桌面悬浮按钮</string>
+    <string name="settings_perm_notification">通知权限</string>
+    <string name="settings_perm_notification_desc">前台服务保活需要显示通知</string>
+    <string name="settings_perm_boot">开机自启</string>
+    <string name="settings_perm_boot_desc">开机后自动启动悬浮工具栏</string>
+    <string name="settings_perm_battery">电池优化白名单</string>
+    <string name="settings_perm_battery_desc">避免悬浮服务被系统省电策略杀掉</string>
+    <string name="settings_perm_granted">已开启</string>
+    <string name="settings_perm_denied">未开启</string>
+    <string name="settings_rom_hint">MIUI / EMUI / ColorOS / OriginOS 等定制系统还需要在系统设置中单独允许「后台弹出界面」与「自启动」，否则悬浮球可能被清理。</string>
+    <string name="settings_rom_open">前往厂商设置</string>
+    <string name="settings_rom_detected">检测到 %1$s 设备</string>
+
+    <!-- ==================== 关于 ==================== -->
+    <string name="about_title">关于</string>
+    <string name="about_version">版本 %1$s</string>
+    <string name="about_license_title">开源协议</string>
+    <string name="about_license_desc">本项目基于 GNU General Public License v3.0 开源，你可以自由使用、修改与分发，但衍生作品必须同样以 GPLv3 开源。</string>
+    <string name="about_repo">GitHub 仓库</string>
+    <string name="about_author_title">作者</string>
+    <string name="about_author_name">MapleYazuu</string>
+    <string name="about_author_desc">由 MapleYazuu 开发，GPLv3 开源，与社区共同维护。</string>
+    <string name="about_thanks_title">致谢</string>
+    <string name="about_thanks_desc">感谢 Jetpack Compose、OkHttp、Room、ML Kit、Coil 等优秀开源项目。</string>
+    <string name="about_check_update">检查更新</string>
+    <string name="about_checking">正在检查…</string>
+    <string name="about_up_to_date">已是最新版本</string>
+    <string name="about_update_found">发现新版本 %1$s</string>
+    <string name="about_update_download">下载</string>
+    <string name="about_check_fail">检查更新失败：%1$s</string>
+
+    <!-- ==================== 悬浮窗 ==================== -->
+    <string name="overlay_action_screenshot">截图</string>
+    <string name="overlay_action_input">选择指令</string>
+    <string name="overlay_action_history">历史</string>
+    <string name="overlay_action_settings">设置</string>
+    <string name="overlay_capture_preview_title">截图预览</string>
+    <string name="overlay_capture_confirm">确认并选择指令</string>
+    <string name="overlay_capture_retry">重新截图</string>
+    <string name="overlay_capture_fail">截图失败，请确认已开启无障碍服务</string>
+    <string name="overlay_capture_processing">正在截图…</string>
+    <string name="overlay_choose_preset">选择指令</string>
+    <string name="overlay_result_title">AI 回复</string>
+    <string name="overlay_result_copy">复制</string>
+    <string name="overlay_result_close">关闭</string>
+    <string name="overlay_result_regenerate">重新生成</string>
+    <string name="overlay_result_followup_hint">追问…</string>
+    <string name="overlay_result_send">发送</string>
+    <string name="overlay_ocr_fallback">当前模型不支持图片，已使用本地 OCR 提取文字</string>
+    <string name="overlay_no_preset">请先选择或新建预设指令</string>
+    <string name="overlay_no_api_key">请先在设置中填写 %1$s 的 API Key</string>
+    <string name="overlay_history_empty">暂无历史记录</string>
+    <string name="overlay_copied">已复制</string>
+
+    <!-- ==================== 通用 ==================== -->
+    <string name="common_back">返回</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_delete">删除</string>
+    <string name="common_save">保存</string>
+    <string name="common_close">关闭</string>
+    <string name="common_unknown">未知</string>
+
+    <!-- ==================== 调试示例 ==================== -->
+    <string name="vendor_xiaomi">小米</string>
+    <string name="vendor_huawei">华为</string>
+    <string name="vendor_oppo">OPPO</string>
+    <string name="vendor_vivo">vivo</string>
+    <string name="vendor_samsung">三星</string>
+    <!-- ==================== 错误提示 ==================== -->
+    <string name="error_missing_api_key">请先在设置中填写 %1$s 的 API Key</string>
+    <string name="error_http_auth">鉴权失败（%1$d），请确认 API Key 是否正确或已过期</string>
+    <string name="error_http_not_found">接口地址不存在（%1$d），请检查 Base URL 与模型名</string>
+    <string name="error_http_rate_limit">请求过于频繁或额度不足（%1$d），请稍后重试</string>
+    <string name="error_http_server">服务端错误（%1$d），请稍后重试</string>
+    <string name="error_http_generic">请求失败（%1$d）</string>
+    <string name="error_network">网络异常：%1$s</string>
+    <string name="error_network_hint">请检查网络连接</string>
+    <string name="error_parse">响应解析失败：%1$s</string>
+    <string name="error_cancelled">已取消</string>
+    <string name="error_unknown_detail">未知错误：%1$s</string>
+    <!-- ==================== 自定义模型 ==================== -->
+    <string name="settings_custom_model">自定义模型</string>
+    <string name="settings_custom_model_hint">任意兼容 OpenAI 格式的第三方接口</string>
+    <string name="custom_field_name">显示名称</string>
+    <string name="custom_field_base_url">接口地址（Base URL）</string>
+    <string name="custom_field_model_id">模型 ID</string>
+    <string name="custom_field_vision">支持图片输入</string>
+    <string name="custom_vision_off_note">关闭时截图将先经本地 OCR 提取文字后发送</string>
+    <string name="custom_url_hint">缺少 http(s):// 时自动补全</string>
+    <string name="custom_error_model_id">请填写模型 ID</string>
+    <string name="preset_confirm_delete">确认删除</string>
+    <string name="preset_reorder_hint">长按拖动排序</string>
+    <string name="preset_delete_title">删除指令</string>
+    <string name="preset_selected_count">已选择 %1$d 项</string>
+    <string name="preset_select_all">全选</string>
+    <string name="preset_delete_selected_message">确定要删除选中的 %1$d 条指令吗？此操作不可撤销。</string>
+    <string name="preset_deleted_multi">已删除</string>
+    <string name="overlay_preview_pin">固定</string>
+    <string name="overlay_preview_unpin">取消固定</string>
+    <string name="overlay_preview_pin_toast_pinned">已固定窗口</string>
+    <string name="overlay_preview_pin_toast_unpinned">已取消固定</string>
+    <string name="overlay_preset_default_set">已设为默认指令</string>
+    <string name="overlay_no_preset_choose">暂无预设指令，请先新建</string>
+    <string name="overlay_open_preset_manager">预设管理</string>
+    <string name="overlay_drag_handle">拖动窗口</string>
+    <string name="tile_floating_label">悬浮工具栏</string>
+    <string name="tile_floating_on">悬浮工具栏已开启</string>
+    <string name="tile_floating_off">悬浮工具栏已关闭</string>
+    <string name="overlay_resize_handle">调整窗口大小</string>
+    <string name="overlay_capture_fail_running">截图失败，请重试；若持续失败，请重新开启无障碍服务。</string>
+    <string name="preset_create_title">新建指令</string>
+    <string name="preset_create_name_hint">指令名称（如：翻译）</string>
+    <string name="preset_create_prompt_hint">指令内容（发送给 AI 的提示词）</string>
+    <string name="preset_create_error_empty">请填写指令名称和内容</string>
+    <string name="preset_create_cancel">取消</string>
+</resources>

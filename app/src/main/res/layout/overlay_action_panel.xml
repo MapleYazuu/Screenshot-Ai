@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  径向弹出的卫星按钮面板。
+  - 去掉了标题行与「X」关闭按钮：收起改为「点击空白处」或「再次长按悬浮球」；
+  - 4 个按钮（截图 / 录入 / 历史 / 设置）以绝对坐标由代码摆放
+    （OverlayBubbleContainerView 计算），本布局只负责每个按钮的样式载体；
+  - 按钮样式：drawableTop 图标 + 小字标签，56dp 圆角方形，卫星感。
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/actionPanelRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/actionScreenshot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_overlay_camera" />
+
+    <TextView
+        android:id="@+id/actionInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_overlay_edit" />
+
+    <TextView
+        android:id="@+id/actionHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_overlay_history" />
+
+    <TextView
+        android:id="@+id/actionSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_overlay_settings" />
+
+</FrameLayout>

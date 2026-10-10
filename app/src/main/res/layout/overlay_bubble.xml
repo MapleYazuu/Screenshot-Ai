@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  悬浮球：52dp 正圆 + 居中相机图标。
+  尺寸写在代码里（OverlayManager 按 AppSettings.floatingSizeDp 覆盖），
+  这里给出一份默认值，保证预览与首帧不塌陷。
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bubbleRoot"
+    android:layout_width="@dimen/overlay_bubble_size"
+    android:layout_height="@dimen/overlay_bubble_size"
+    android:background="@drawable/bg_overlay_bubble"
+    android:contentDescription="@string/overlay_action_screenshot">
+
+    <ImageView
+        android:id="@+id/bubbleIcon"
+        android:layout_width="@dimen/overlay_bubble_icon_size"
+        android:layout_height="@dimen/overlay_bubble_icon_size"
+        android:layout_gravity="center"
+        android:contentDescription="@string/overlay_action_screenshot"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_overlay_camera" />
+
+</FrameLayout>

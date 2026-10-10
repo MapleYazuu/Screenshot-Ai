@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  悬浮面板内的操作按钮背景（统一质感）：
+  - 半透明白：面板本身是半透明白卡片，按钮用白色 12% 叠加形成「略亮一层」的层次，
+    深浅两种模式都自然；
+  - 12dp 圆角 + 白色水波纹：按压反馈与面板整体圆角规范一致。
+-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#40FFFFFF">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#1FFFFFFF" />
+            <corners android:radius="@dimen/overlay_button_corner" />
+        </shape>
+    </item>
+
+</ripple>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 应用主题：以 Material 3 为基底，Compose 侧使用 Theme.kt 定义配色 -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 基础主题：无 ActionBar，配合 Compose 使用 -->
+    <style name="Theme.ScreenshotAI" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowBackground">@color/window_background</item>
+    </style>
+
+    <!-- 悬浮窗内使用的透明主题，避免切换页面时闪烁 -->
+    <style name="Theme.ScreenshotAI.Transparent" parent="Theme.ScreenshotAI">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!-- 关于页：开源协议文本样式 -->
+    <style name="TextAppearance.ScreenshotAI.Body" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:lineSpacingMultiplier">1.35</item>
+    </style>
+</resources>

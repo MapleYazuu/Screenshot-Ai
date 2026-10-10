@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  AI 回复卡片（高级感重构）。
+  - 高度 WRAP_CONTENT，按内容自适应；正文区由 OverlayManager 设置
+    70% 屏幕高度上限，超出后内部滚动；
+  - 标题栏：标题居左、点阵拖拽把手居中、固定图钉居右，同一水平线垂直居中；
+  - 追问输入框：白色圆角描边容器，发送按钮为主色小圆角按钮；
+  - 底部操作行：复制 / 重新生成 / 关闭 等宽平分、间距 12dp、带背景与涟漪。
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/resultRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/overlay_result_shadow_margin">
+
+    <LinearLayout
+        android:id="@+id/resultCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_overlay_result_card"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="@dimen/overlay_result_padding">
+
+        <!-- 标题行：标题（左）+ 点阵拖拽把手（居中）+ 固定图钉（右） -->
+        <LinearLayout
+            android:id="@+id/resultTitleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/resultTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/resultDragHandle"
+                android:layout_width="wrap_content"
+                android:clickable="true"
+                android:focusable="false"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/overlay_drag_handle"
+                android:minWidth="44dp"
+                android:minHeight="40dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="4dp"
+                android:src="@drawable/ic_drag_handle_dots" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/resultPin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_pin_outline"
+                android:gravity="center_vertical"
+                android:minWidth="44dp"
+                android:minHeight="40dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="4dp" />
+
+        </LinearLayout>
+
+        <!-- 正文：MaxHeightScrollView，短内容自适应、长内容内部滚动 -->
+        <com.screenshot.ai.overlay.MaxHeightScrollView
+            android:id="@+id/resultScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/overlay_panel_gap"
+            android:scrollbars="vertical">
+
+            <TextView
+                android:id="@+id/resultContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.4"
+                android:textColor="@color/overlay_result_text"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/overlay_result_body_size" />
+
+        </com.screenshot.ai.overlay.MaxHeightScrollView>
+
+        <TextView
+            android:id="@+id/resultError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/overlay_row_gap"
+            android:textSize="@dimen/overlay_body_text_size"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/resultStatusTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/overlay_row_gap"
+            android:textSize="@dimen/overlay_body_text_size"
+            android:visibility="gone" />
+
+        <!-- 追问输入行：白色圆角描边输入框 + 主色发送按钮 -->
+        <LinearLayout
+            android:id="@+id/resultFollowUpRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/overlay_panel_gap"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_overlay_input_box">
+
+                <EditText
+                    android:id="@+id/resultFollowUpInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/overlay_result_followup_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLines="3"
+                    android:minHeight="@dimen/overlay_button_height"
+                    android:paddingStart="@dimen/overlay_button_padding_h"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="@dimen/overlay_button_padding_h"
+                    android:paddingBottom="8dp"
+                    android:textSize="@dimen/overlay_body_text_size" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/resultFollowUpSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/overlay_row_gap"
+                android:background="@drawable/bg_overlay_primary_button"
+                android:gravity="center"
+                android:minHeight="@dimen/overlay_button_height"
+                android:minWidth="56dp"
+                android:paddingStart="@dimen/overlay_button_padding_h"
+                android:paddingEnd="@dimen/overlay_button_padding_h"
+                android:text="@string/overlay_result_send"
+                android:textColor="@color/overlay_input_bg"
+                android:textSize="@dimen/overlay_body_text_size" />
+
+        </LinearLayout>
+
+        <!-- 操作行：复制 / 重新生成 / 关闭 等宽平分、间距 12dp、带背景与涟漪 -->
+        <LinearLayout
+            android:id="@+id/resultActionRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/overlay_panel_gap"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/resultCopy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_overlay_action_button"
+                android:gravity="center"
+                android:minHeight="@dimen/overlay_button_height"
+                android:text="@string/overlay_result_copy"
+                android:textSize="@dimen/overlay_body_text_size" />
+
+            <TextView
+                android:id="@+id/resultRegenerate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_overlay_action_button"
+                android:gravity="center"
+                android:minHeight="@dimen/overlay_button_height"
+                android:text="@string/overlay_result_regenerate"
+                android:textSize="@dimen/overlay_body_text_size" />
+
+            <TextView
+                android:id="@+id/resultClose"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_overlay_action_button"
+                android:gravity="center"
+                android:minHeight="@dimen/overlay_button_height"
+                android:text="@string/overlay_result_close"
+                android:textSize="@dimen/overlay_body_text_size" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 右下角缩放把手：按住拖动调整窗口大小（与右上角移动把手严格区分） -->
+    <ImageView
+        android:id="@+id/resultResizeGrip"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="2dp"
+        android:contentDescription="@string/overlay_resize_handle"
+        android:src="@drawable/ic_resize_corner" />
+
+</FrameLayout>

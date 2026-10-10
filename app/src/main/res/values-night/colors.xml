@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="window_background">#121317</color>
+    <color name="overlay_panel_bg">#E81A1B21</color>
+    <color name="overlay_scrim">#66000000</color>
+    <!-- AI 回复卡片（深色）：近黑底 + 细描边 + 浅灰正文 -->
+    <color name="overlay_result_bg">#1A1B21</color>
+    <color name="overlay_result_stroke">#2A2C33</color>
+    <color name="overlay_result_text">#E4E4E8</color>
+    <!-- 追问输入框与主色按钮（深色） -->
+    <color name="overlay_input_bg">#26272E</color>
+    <color name="overlay_input_stroke">#3A3D46</color>
+    <color name="overlay_primary">#B9AFFF</color>
+</resources>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  「新建指令」二级弹窗（悬浮窗内弹出）。
+  - 高度 WRAP_CONTENT：按内容自适应，字段/按钮都不留空白；
+  - 标题栏带点阵拖拽把手（继承悬浮窗底座：可拖动、无固定）；
+  - 没有右上角 X 关闭按钮：点弹窗外空白（ACTION_OUTSIDE）或「取消」关闭；
+  - 无「从剪贴板粘贴」功能。
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/presetCreateRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:id="@+id/presetCreateContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_overlay_panel"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/overlay_panel_padding_h"
+        android:paddingTop="@dimen/overlay_panel_padding_v"
+        android:paddingEnd="@dimen/overlay_panel_padding_h"
+        android:paddingBottom="@dimen/overlay_panel_padding_v">
+
+        <!-- 标题行：标题居左 + 点阵拖拽把手居中（无关闭按钮） -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/presetCreateTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/preset_create_title"
+                android:textSize="@dimen/overlay_title_text_size"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/presetCreateDragHandle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="@string/overlay_drag_handle"
+                android:focusable="false"
+                android:minWidth="44dp"
+                android:minHeight="40dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="4dp"
+                android:src="@drawable/ic_drag_handle_dots" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <!-- 指令名称：单行输入框（白底圆角描边容器） -->
+        <FrameLayout
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/overlay_panel_gap"
+            android:background="@drawable/bg_overlay_input_box">
+
+            <EditText
+                android:id="@+id/presetCreateName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/preset_create_name_hint"
+                android:importantForAutofill="no"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:minHeight="@dimen/overlay_button_height"
+                android:paddingStart="@dimen/overlay_button_padding_h"
+                android:paddingTop="8dp"
+                android:paddingEnd="@dimen/overlay_button_padding_h"
+                android:paddingBottom="8dp"
+                android:textSize="@dimen/overlay_body_text_size" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/presetCreateError"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:text="@string/preset_create_error_empty"
+            android:textSize="@dimen/overlay_caption_text_size"
+            android:visibility="gone" />
+
+        <!-- 指令内容（Prompt）：多行输入框（minLines 3） -->
+        <FrameLayout
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/overlay_panel_gap"
+            android:background="@drawable/bg_overlay_input_box">
+
+            <EditText
+                android:id="@+id/presetCreatePrompt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="top"
+                android:hint="@string/preset_create_prompt_hint"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="3"
+                android:paddingStart="@dimen/overlay_button_padding_h"
+                android:paddingTop="8dp"
+                android:paddingEnd="@dimen/overlay_button_padding_h"
+                android:paddingBottom="8dp"
+                android:textSize="@dimen/overlay_body_text_size" />
+
+        </FrameLayout>
+
+        <!-- 底部操作行：保存（主色实心）+ 取消（描边），等宽平分、间距 12dp -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/presetCreateSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_overlay_primary_button"
+                android:gravity="center"
+                android:minHeight="48dp"
+                android:text="@string/common_save"
+                android:textColor="@color/overlay_input_bg"
+                android:textSize="@dimen/overlay_body_text_size" />
+
+            <TextView
+                android:id="@+id/presetCreateCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_overlay_action_button"
+                android:gravity="center"
+                android:minHeight="48dp"
+                android:text="@string/preset_create_cancel"
+                android:textSize="@dimen/overlay_body_text_size" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

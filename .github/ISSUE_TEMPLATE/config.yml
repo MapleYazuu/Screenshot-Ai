@@ -1,0 +1,16 @@
+# Issue 模板选择页配置
+# 关闭空白 Issue，引导用户使用模板或前往 Discussions。
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 提问与讨论 (Discussions)
+    url: https://github.com/MapleYazuu/Screenshot-AI/discussions
+    about: 使用问题、经验交流、想法探讨请到这里，而不是开 Issue。
+  - name: 📖 常见问题 FAQ
+    url: https://github.com/MapleYazuu/Screenshot-AI/blob/main/README.md
+    about: 见 README 的「常见问题 FAQ」章节：悬浮球不见、截图失败、401/429 报错、后台被杀等。
+  - name: 🔑 BYOK 与 API Key 配置
+    url: https://github.com/MapleYazuu/Screenshot-AI/blob/main/docs/byok.md
+    about: Key 申请地址、额度说明、错误码对照与成本控制建议。
+  - name: 🔒 API Key 安全策略
+    url: https://github.com/MapleYazuu/Screenshot-AI/blob/main/docs/api-key-security.md
+    about: 密钥加密方式、威胁模型与隐私边界说明。

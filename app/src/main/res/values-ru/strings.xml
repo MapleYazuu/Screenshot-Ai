@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Русские строки. Английский оригинал (эталонный набор ключей) — values/strings.xml.
+  Всё, что здесь не определено, откатывается к английскому варианту,
+  поэтому новые ключи сначала добавляются в английский файл.
+-->
+<resources>
+    <string name="app_name">Screenshot AI</string>
+
+    <!-- ==================== Служба спец. возможностей ==================== -->
+    <string name="accessibility_service_label">Screenshot AI · Служба захвата</string>
+    <string name="accessibility_service_summary">Делает снимок экрана при нажатии плавающей кнопки</string>
+    <string name="accessibility_service_description">После включения нажатие плавающей кнопки делает снимок текущего экрана и отправляет его вашей ИИ-модели. Служба срабатывает только при явном нажатии кнопки, а снимки остаются на вашем устройстве.</string>
+
+    <!-- ==================== Уведомление ==================== -->
+    <string name="notif_channel_name">Плавающая панель</string>
+    <string name="notif_channel_desc">Поддерживает работу плавающей панели</string>
+    <string name="notif_title">Screenshot AI работает</string>
+    <string name="notif_text">Нажмите плавающую кнопку, чтобы сделать снимок и задать вопрос</string>
+    <string name="notif_action_stop">Остановить</string>
+
+    <!-- ==================== Главный экран ==================== -->
+    <string name="main_subtitle">Снимок, вопрос — готово</string>
+    <string name="main_section_switch">Функции</string>
+    <string name="main_floating_title">Плавающая панель</string>
+    <string name="main_floating_desc">Оставляет плавающую кнопку на экране: нажмите, чтобы сразу сделать снимок и задать вопрос; долгое нажатие — Снимок / Написать / История / Настройки</string>
+    <string name="main_section_entry">Обзор</string>
+    <string name="main_entry_history">История запросов</string>
+    <string name="main_entry_preset">Шаблоны промптов</string>
+    <string name="main_entry_about">О приложении / GitHub</string>
+    <string name="main_version_format">Версия %1$s</string>
+    <string name="main_service_killed">Плавающая служба была выгружена системой; переключатель сброшен</string>
+    <string name="main_settings">Настройки</string>
+    <string name="main_need_accessibility">Для снимков нужна служба спец. возможностей: нажмите, чтобы включить</string>
+
+    <!-- ==================== История ==================== -->
+    <string name="history_title">История запросов</string>
+    <string name="history_search_hint">Поиск по шаблону, промпту или ответу…</string>
+    <string name="history_filter">Фильтр</string>
+    <string name="history_filter_provider">Фильтр по провайдеру</string>
+    <string name="history_filter_model">Фильтр по модели</string>
+    <string name="history_filter_reset">Сбросить</string>
+    <string name="history_filter_apply">Применить</string>
+    <string name="history_empty">Запросов пока нет</string>
+    <string name="history_empty_desc">Нажмите плавающую кнопку, чтобы сделать снимок экрана и начать</string>
+    <string name="history_deleted">Запись удалена</string>
+    <string name="history_undo">Отменить</string>
+    <string name="history_action_copy">Копировать</string>
+    <string name="history_action_delete">Удалить</string>
+    <string name="history_action_reask">Спросить снова</string>
+    <string name="history_action_share">Поделиться</string>
+    <string name="history_label_prompt">Промпт</string>
+    <string name="history_label_reply">Ответ ИИ</string>
+    <string name="history_label_screenshot">Исходный снимок</string>
+    <string name="history_image_missing">Файл снимка больше не существует</string>
+    <string name="history_copied">Скопировано в буфер обмена</string>
+    <string name="history_clipboard_label_preset">Шаблон</string>
+    <string name="history_clipboard_label_prompt">Промпт</string>
+    <string name="history_share_chooser">Поделиться этой записью</string>
+
+    <!-- ==================== Шаблоны промптов ==================== -->
+    <string name="preset_title">Шаблоны промптов</string>
+    <string name="preset_add">Новый шаблон</string>
+    <string name="preset_edit">Изменить шаблон</string>
+    <string name="preset_field_name">Название шаблона</string>
+    <string name="preset_field_prompt">Текст промпта</string>
+    <string name="preset_field_icon">Значок (необязательно, один эмодзи)</string>
+    <string name="preset_set_default">Сделать шаблоном по умолчанию</string>
+    <string name="preset_default_badge">По умолчанию</string>
+    <string name="preset_import_clipboard">Импорт из буфера обмена</string>
+    <string name="preset_save">Сохранить</string>
+    <string name="preset_cancel">Отмена</string>
+    <string name="preset_delete">Удалить</string>
+    <string name="preset_deleted">Удалено успешно</string>
+    <string name="preset_empty">Пока нет инструкций. Нажмите + в углу, чтобы создать.</string>
+    <string name="preset_builtin_hint">Встроенные шаблоны нельзя удалить; измените нужный и сохраните как новый</string>
+    <string name="preset_error_name_empty">Введите название шаблона</string>
+    <string name="preset_error_prompt_empty">Введите текст промпта</string>
+    <string name="preset_clipboard_empty">В буфере обмена нет текста</string>
+
+    <!--
+      Промпты встроенных шаблонов (инструкции для модели, а не текст интерфейса).
+      Держим их на языке интерфейса: если пользователь переключился на русский,
+      модель тоже получает инструкцию на русском.
+      Язык ответа дополнительно задаётся в PromptTemplates.withReplyLanguageDirective.
+    -->
+
+    <!-- ==================== Настройки ==================== -->
+    <string name="settings_title">Настройки</string>
+    <string name="settings_section_model">Модели</string>
+    <string name="settings_section_floating">Плавающий пузырь</string>
+    <string name="settings_section_permission">Разрешения</string>
+    <string name="settings_section_other">Прочее</string>
+    <string name="settings_default_model">Модель по умолчанию</string>
+    <string name="settings_api_key">API Key</string>
+    <string name="settings_api_key_hint">Вставьте свой API-ключ</string>
+    <string name="settings_api_key_saved">Зашифрован и сохранён</string>
+    <string name="settings_clear_key">Очистить ключ</string>
+    <string name="settings_test_connection">Проверить подключение</string>
+    <string name="settings_testing">Проверка…</string>
+    <string name="settings_test_ok">Подключение работает</string>
+    <string name="settings_test_fail">Ошибка подключения: %1$s</string>
+    <string name="settings_vision_supported">Поддерживает ввод изображений</string>
+    <string name="settings_vision_unsupported">Без поддержки изображений, используется локальный OCR</string>
+    <string name="settings_base_url">Адрес эндпоинта</string>
+    <string name="settings_floating_alpha">Прозрачность пузыря</string>
+    <string name="settings_floating_edge">Автоскрытие у края экрана</string>
+    <string name="settings_low_quality">Режим низкого качества (512px, экономит токены)</string>
+    <string name="settings_language">Язык</string>
+    <string name="settings_language_system">Как в системе</string>
+    <string name="settings_language_zh">简体中文</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_ja">日本語</string>
+    <string name="settings_language_ko">한국어</string>
+    <string name="settings_language_ru">Русский</string>
+    <string name="settings_language_hint">Также определяет язык ответов ИИ.</string>
+    <string name="settings_theme">Тема</string>
+    <string name="settings_theme_system">Как в системе</string>
+    <string name="settings_theme_light">Светлая</string>
+    <string name="settings_theme_dark">Тёмная</string>
+    <string name="settings_about">О приложении / GitHub</string>
+    <string name="settings_perm_accessibility">Захват через спец. возможности</string>
+    <string name="settings_perm_accessibility_desc">Требуется для создания снимков экрана</string>
+    <string name="settings_perm_overlay">Поверх других приложений</string>
+    <string name="settings_perm_overlay_desc">Показывает плавающую кнопку</string>
+    <string name="settings_perm_notification">Разрешение на уведомления</string>
+    <string name="settings_perm_notification_desc">Требуется для уведомления службы переднего плана</string>
+    <string name="settings_perm_boot">Запуск при загрузке</string>
+    <string name="settings_perm_boot_desc">Запускает плавающую панель после перезагрузки</string>
+    <string name="settings_perm_battery">Игнорировать оптимизацию батареи</string>
+    <string name="settings_perm_battery_desc">Не даёт системе закрыть плавающую службу</string>
+    <string name="settings_perm_granted">Включено</string>
+    <string name="settings_perm_denied">Отключено</string>
+    <string name="settings_rom_hint">MIUI / EMUI / ColorOS / OriginOS также требуют разрешить «всплывающие окна в фоне» и «автозапуск» в настройках системы, иначе пузырь может быть закрыт.</string>
+    <string name="settings_rom_open">Настройки производителя</string>
+    <string name="settings_rom_detected">Обнаружено устройство %1$s</string>
+
+    <!-- ==================== О приложении ==================== -->
+    <string name="about_title">О приложении</string>
+    <string name="about_version">Версия %1$s</string>
+    <string name="about_license_title">Лицензия</string>
+    <string name="about_license_desc">Проект распространяется под лицензией GNU General Public License v3.0. Вы можете свободно использовать, изменять и распространять его, но производные работы также должны быть открыты под GPLv3.</string>
+    <string name="about_repo">Репозиторий на GitHub</string>
+    <string name="about_author_title">Автор</string>
+    <string name="about_author_name">MapleYazuu</string>
+    <string name="about_author_desc">Разработано MapleYazuu. Открытый исходный код под GPLv3, поддерживается вместе с сообществом.</string>
+    <string name="about_thanks_title">Благодарности</string>
+    <string name="about_thanks_desc">Спасибо Jetpack Compose, OkHttp, Room, ML Kit, Coil и другим замечательным проектам с открытым исходным кодом.</string>
+    <string name="about_check_update">Проверить обновления</string>
+    <string name="about_checking">Проверка…</string>
+    <string name="about_up_to_date">У вас последняя версия</string>
+    <string name="about_update_found">Доступна новая версия %1$s</string>
+    <string name="about_update_download">Скачать</string>
+    <string name="about_check_fail">Не удалось проверить обновления: %1$s</string>
+
+    <!-- ==================== Плавающее окно ==================== -->
+    <string name="overlay_action_screenshot">Снимок</string>
+    <string name="overlay_action_input">Выбрать инструкцию</string>
+    <string name="overlay_action_history">История</string>
+    <string name="overlay_action_settings">Настройки</string>
+    <string name="overlay_capture_preview_title">Предпросмотр снимка</string>
+    <string name="overlay_capture_confirm">Подтвердить и выбрать шаблон</string>
+    <string name="overlay_capture_retry">Повторить снимок</string>
+    <string name="overlay_capture_fail">Не удалось сделать снимок. Убедитесь, что служба спец. возможностей включена</string>
+    <string name="overlay_capture_processing">Делаем снимок…</string>
+    <string name="overlay_choose_preset">Выберите шаблон</string>
+    <string name="overlay_result_title">Ответ ИИ</string>
+    <string name="overlay_result_copy">Копировать</string>
+    <string name="overlay_result_close">Закрыть</string>
+    <string name="overlay_result_regenerate">Сгенерировать заново</string>
+    <string name="overlay_result_followup_hint">Уточнить…</string>
+    <string name="overlay_result_send">Отправить</string>
+    <string name="overlay_ocr_fallback">Эта модель не поддерживает изображения, текст распознан локальным OCR</string>
+    <string name="overlay_no_preset">Сначала выберите или создайте инструкцию</string>
+    <string name="overlay_no_api_key">Укажите API-ключ для %1$s в настройках</string>
+    <string name="overlay_history_empty">История пока пуста</string>
+    <string name="overlay_copied">Скопировано</string>
+
+    <!-- ==================== Общие ==================== -->
+    <string name="common_back">Назад</string>
+    <string name="common_cancel">Отмена</string>
+    <string name="common_delete">Удалить</string>
+    <string name="common_save">Сохранить</string>
+    <string name="common_close">Закрыть</string>
+    <string name="common_unknown">Неизвестно</string>
+
+    <!-- ==================== Отладочные примеры ==================== -->
+    <string name="vendor_xiaomi">Xiaomi</string>
+    <string name="vendor_huawei">Huawei</string>
+    <string name="vendor_oppo">OPPO</string>
+    <string name="vendor_vivo">vivo</string>
+    <string name="vendor_samsung">Samsung</string>
+    <!-- ==================== Ошибки ==================== -->
+    <string name="error_missing_api_key">Укажите API-ключ для %1$s в настройках</string>
+    <string name="error_http_auth">Ошибка авторизации (%1$d). Проверьте, что API-ключ верен и не истёк</string>
+    <string name="error_http_not_found">Адрес не найден (%1$d). Проверьте Base URL и имя модели</string>
+    <string name="error_http_rate_limit">Слишком много запросов или исчерпана квота (%1$d). Повторите позже</string>
+    <string name="error_http_server">Ошибка сервера (%1$d). Повторите позже</string>
+    <string name="error_http_generic">Запрос не выполнен (%1$d)</string>
+    <string name="error_network">Ошибка сети: %1$s</string>
+    <string name="error_network_hint">проверьте подключение</string>
+    <string name="error_parse">Не удалось разобрать ответ: %1$s</string>
+    <string name="error_cancelled">Отменено</string>
+    <string name="error_unknown_detail">Неизвестная ошибка: %1$s</string>
+    <!-- ==================== Пользовательская модель ==================== -->
+    <string name="settings_custom_model">Пользовательская модель</string>
+    <string name="settings_custom_model_hint">Любой сторонний API, совместимый с OpenAI</string>
+    <string name="custom_field_name">Отображаемое имя</string>
+    <string name="custom_field_base_url">Базовый URL</string>
+    <string name="custom_field_model_id">ID модели</string>
+    <string name="custom_field_vision">Поддержка изображений</string>
+    <string name="custom_vision_off_note">При выключении скриншот распознаётся локальным OCR и отправляется текстом</string>
+    <string name="custom_url_hint">Если нет http(s)://, он будет добавлен автоматически</string>
+    <string name="custom_error_model_id">Укажите ID модели</string>
+    <string name="preset_confirm_delete">Подтвердить удаление</string>
+    <string name="preset_reorder_hint">Долгое нажатие и перетаскивание</string>
+    <string name="preset_delete_title">Удалить инструкцию</string>
+    <string name="preset_selected_count">Выбрано: %1$d</string>
+    <string name="preset_select_all">Выбрать все</string>
+    <string name="preset_delete_selected_message">Удалить выбранные инструкции (%1$d)? Это действие нельзя отменить.</string>
+    <string name="preset_deleted_multi">Удалено</string>
+    <string name="overlay_preview_pin">Закрепить</string>
+    <string name="overlay_preview_unpin">Открепить</string>
+    <string name="overlay_preview_pin_toast_pinned">Окно закреплено</string>
+    <string name="overlay_preview_pin_toast_unpinned">Окно откреплено</string>
+    <string name="overlay_preset_default_set">Инструкция по умолчанию установлена</string>
+    <string name="overlay_no_preset_choose">Нет инструкций. Сначала создайте одну</string>
+    <string name="overlay_open_preset_manager">Управление инструкциями</string>
+    <string name="overlay_drag_handle">Перетащить окно</string>
+    <string name="tile_floating_label">Плавающая панель</string>
+    <string name="tile_floating_on">Плавающая панель включена</string>
+    <string name="tile_floating_off">Плавающая панель выключена</string>
+    <string name="overlay_resize_handle">Изменить размер окна</string>
+    <string name="overlay_capture_fail_running">Не удалось сделать снимок. Повторите попытку; если не помогает — включите службу специальных возможностей заново.</string>
+    <string name="preset_create_title">Новый шаблон</string>
+    <string name="preset_create_name_hint">Название шаблона (например, Перевод)</string>
+    <string name="preset_create_prompt_hint">Текст промпта, отправляемый ИИ</string>
+    <string name="preset_create_error_empty">Заполните название и промпт</string>
+    <string name="preset_create_cancel">Отмена</string>
+</resources>

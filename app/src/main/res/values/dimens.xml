@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ============================================================================
+  悬浮窗尺寸
+  集中定义的原因：悬浮窗的尺寸同时被「布局 XML」与「WindowManager 计算面板位置
+  的 Kotlin 代码」使用（例如 action panel 需要按气泡坐标 + 面板实测高度定位）。
+  如果两边各写一份魔法数字，任何一次调整都会造成面板与气泡错位。
+  ============================================================================
+-->
+<resources>
+
+    <!-- ==================== 悬浮球 ==================== -->
+    <!-- 默认直径；运行时会按 AppSettings.floatingSizeDp 覆盖（40 ~ 72dp） -->
+    <dimen name="overlay_bubble_size">56dp</dimen>
+    <!-- 图标占气泡直径的比例（约 45%），视觉重心更稳 -->
+    <dimen name="overlay_bubble_icon_size">24dp</dimen>
+
+    <!-- ==================== 面板通用 ==================== -->
+    <!-- 高级感统一：面板圆角 16dp、内边距 16dp -->
+    <dimen name="overlay_panel_corner">20dp</dimen>
+    <dimen name="overlay_panel_padding">16dp</dimen>
+    <dimen name="overlay_panel_padding_h">20dp</dimen>
+    <dimen name="overlay_panel_padding_v">16dp</dimen>
+    <dimen name="overlay_panel_stroke">1dp</dimen>
+    <dimen name="overlay_panel_gap">8dp</dimen>
+
+    <!-- ==================== 按钮 / 列表行 ==================== -->
+    <dimen name="overlay_button_corner">12dp</dimen>
+    <dimen name="overlay_button_height">40dp</dimen>
+    <dimen name="overlay_button_padding_h">12dp</dimen>
+    <dimen name="overlay_row_padding">10dp</dimen>
+    <dimen name="overlay_row_gap">6dp</dimen>
+
+    <!-- ==================== 结果窗口 ==================== -->
+    <!-- 小窗必须限制宽度，否则长回复会铺满整屏、遮挡用户正在看的界面 -->
+    <dimen name="overlay_result_max_width">320dp</dimen>
+    <dimen name="overlay_result_max_height">420dp</dimen>
+    <dimen name="overlay_result_min_height">140dp</dimen>
+    <dimen name="overlay_body_text_size">14sp</dimen>
+    <dimen name="overlay_title_text_size">16sp</dimen>
+    <dimen name="overlay_caption_text_size">11sp</dimen>
+
+    <!-- ==================== 截图预览 ==================== -->
+    <dimen name="overlay_preview_max_width">260dp</dimen>
+    <dimen name="overlay_preview_max_height">360dp</dimen>
+
+    <!-- ==================== 贴边半隐藏 ==================== -->
+
+    <!-- AI 回复卡片：内边距 20dp、外圈 8dp 阴影空间、正文 16sp -->
+    <dimen name="overlay_result_padding">20dp</dimen>
+    <dimen name="overlay_result_shadow_margin">8dp</dimen>
+    <dimen name="overlay_result_body_size">14sp</dimen>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  悬浮球背景：正圆 + 半透明靛蓝。
+  半透明是刻意为之：悬浮球常驻桌面，完全不透明会频繁遮挡底层内容；
+  配合 AppSettings.floatingAlpha 在运行期再乘一次透明度，用户可以调到更轻。
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <solid android:color="@color/overlay_bubble_bg" />
+
+    <!-- 一圈更亮的内描边，让气泡在浅色壁纸上也能被看清（不依赖阴影，兼容性更好） -->
+    <stroke
+        android:width="@dimen/overlay_panel_stroke"
+        android:color="#33FFFFFF" />
+
+</shape>

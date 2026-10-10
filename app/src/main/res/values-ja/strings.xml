@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  日本語（Japanese）の文字列リソース。
+  ここに無い key は values/strings.xml（英語）にフォールバックします。
+  他の言語：values-zh-rCN / values-ja / values-ko / values-ru
+-->
+<resources>
+    <string name="app_name">Screenshot AI</string>
+
+    <!-- ==================== アクセシビリティサービス ==================== -->
+    <string name="accessibility_service_label">Screenshot AI · キャプチャサービス</string>
+    <string name="accessibility_service_summary">フローティングボタンをタップすると画面をキャプチャします</string>
+    <string name="accessibility_service_description">有効にすると、フローティングボタンをタップしたときに現在の画面をキャプチャして AI モデルに送信します。このサービスがキャプチャするのは、ボタンを明示的にタップしたときだけです。スクリーンショットは端末内に保存されます。</string>
+
+    <!-- ==================== 通知 ==================== -->
+    <string name="notif_channel_name">フローティングツールバー</string>
+    <string name="notif_channel_desc">フローティングツールバーを常駐させます</string>
+    <string name="notif_title">Screenshot AI が実行中です</string>
+    <string name="notif_text">フローティングボタンをタップしてキャプチャし、質問できます</string>
+    <string name="notif_action_stop">停止</string>
+
+    <!-- ==================== メイン ==================== -->
+    <string name="main_subtitle">撮る、聞く、完了</string>
+    <string name="main_section_switch">機能</string>
+    <string name="main_floating_title">フローティングツールバー</string>
+    <string name="main_floating_desc">画面にフローティングボタンを常駐させます。タップするとすぐにキャプチャして質問でき、長押しでキャプチャ / 入力 / 履歴 / 設定を開きます</string>
+    <string name="main_section_entry">メニュー</string>
+    <string name="main_entry_history">質問履歴</string>
+    <string name="main_entry_preset">プロンプトプリセット</string>
+    <string name="main_entry_about">アプリについて / GitHub</string>
+    <string name="main_version_format">バージョン %1$s</string>
+    <string name="main_service_killed">フローティングサービスがシステムに回収されたため、スイッチをリセットしました</string>
+    <string name="main_settings">設定</string>
+    <string name="main_need_accessibility">スクリーンショットにはアクセシビリティサービスが必要です。タップして有効にしてください</string>
+
+    <!-- ==================== 履歴 ==================== -->
+    <string name="history_title">質問履歴</string>
+    <string name="history_search_hint">プリセット・プロンプト・返信を検索…</string>
+    <string name="history_filter">フィルター</string>
+    <string name="history_filter_provider">Provider で絞り込む</string>
+    <string name="history_filter_model">モデルで絞り込む</string>
+    <string name="history_filter_reset">リセット</string>
+    <string name="history_filter_apply">適用</string>
+    <string name="history_empty">まだ質問がありません</string>
+    <string name="history_empty_desc">フローティングボタンをタップしてスクリーンショットを撮り、始めましょう</string>
+    <string name="history_deleted">記録を削除しました</string>
+    <string name="history_undo">元に戻す</string>
+    <string name="history_action_copy">コピー</string>
+    <string name="history_action_delete">削除</string>
+    <string name="history_action_reask">もう一度質問</string>
+    <string name="history_action_share">共有</string>
+    <string name="history_label_prompt">プロンプト</string>
+    <string name="history_label_reply">AI の返信</string>
+    <string name="history_label_screenshot">元のスクリーンショット</string>
+    <string name="history_image_missing">スクリーンショットのファイルが存在しません</string>
+    <string name="history_copied">クリップボードにコピーしました</string>
+    <string name="history_clipboard_label_preset">プリセット</string>
+    <string name="history_clipboard_label_prompt">プロンプト</string>
+    <string name="history_share_chooser">この記録を共有</string>
+
+    <!-- ==================== プリセット ==================== -->
+    <string name="preset_title">プロンプトプリセット</string>
+    <string name="preset_add">新規プリセット</string>
+    <string name="preset_edit">プリセットを編集</string>
+    <string name="preset_field_name">プリセット名</string>
+    <string name="preset_field_prompt">プロンプトの内容</string>
+    <string name="preset_field_icon">アイコン（任意、絵文字 1 文字）</string>
+    <string name="preset_set_default">既定のプリセットに設定</string>
+    <string name="preset_default_badge">既定</string>
+    <string name="preset_import_clipboard">クリップボードから読み込む</string>
+    <string name="preset_save">保存</string>
+    <string name="preset_cancel">キャンセル</string>
+    <string name="preset_delete">削除</string>
+    <string name="preset_deleted">削除しました</string>
+    <string name="preset_empty">プリセットがまだありません。右下の + から作成しましょう。</string>
+    <string name="preset_builtin_hint">組み込みプリセットは削除できません。編集して別名で保存してください</string>
+    <string name="preset_error_name_empty">プリセット名を入力してください</string>
+    <string name="preset_error_prompt_empty">プロンプトの内容を入力してください</string>
+    <string name="preset_clipboard_empty">クリップボードに利用できるテキストがありません</string>
+
+    <!--
+      組み込みプリセットのプロンプトテンプレート（モデルに送る指示であり、画面に表示する文言ではありません）。
+      アプリの表示言語と揃えます。ユーザーが日本語に切り替えると、モデルも日本語の指示を受け取ります。
+      出力言語は PromptTemplates.withReplyLanguageDirective が末尾で明示的に指定します。
+    -->
+
+    <!-- ==================== 設定 ==================== -->
+    <string name="settings_title">設定</string>
+    <string name="settings_section_model">モデル</string>
+    <string name="settings_section_floating">フローティングバブル</string>
+    <string name="settings_section_permission">権限</string>
+    <string name="settings_section_other">その他</string>
+    <string name="settings_default_model">既定のモデル</string>
+    <string name="settings_api_key">API Key</string>
+    <string name="settings_api_key_hint">API Key を貼り付けてください</string>
+    <string name="settings_api_key_saved">暗号化して保存しました</string>
+    <string name="settings_clear_key">Key を消去</string>
+    <string name="settings_test_connection">接続テスト</string>
+    <string name="settings_testing">テスト中…</string>
+    <string name="settings_test_ok">接続に成功しました</string>
+    <string name="settings_test_fail">接続に失敗しました：%1$s</string>
+    <string name="settings_vision_supported">画像入力に対応</string>
+    <string name="settings_vision_unsupported">画像に非対応。端末内 OCR にフォールバックします</string>
+    <string name="settings_base_url">エンドポイント</string>
+    <string name="settings_floating_alpha">バブルの不透明度</string>
+    <string name="settings_floating_edge">画面端で自動的に隠す</string>
+    <string name="settings_low_quality">低画質モード（512px、トークンを節約）</string>
+    <string name="settings_language">言語</string>
+    <string name="settings_language_system">システムに従う</string>
+    <string name="settings_language_zh">简体中文</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_ja">日本語</string>
+    <string name="settings_language_ko">한국어</string>
+    <string name="settings_language_ru">Русский</string>
+    <string name="settings_language_hint">AI が返信する言語もあわせて切り替わります。</string>
+    <string name="settings_theme">テーマ</string>
+    <string name="settings_theme_system">システムに従う</string>
+    <string name="settings_theme_light">ライト</string>
+    <string name="settings_theme_dark">ダーク</string>
+    <string name="settings_about">アプリについて / GitHub</string>
+    <string name="settings_perm_accessibility">アクセシビリティによるキャプチャ</string>
+    <string name="settings_perm_accessibility_desc">スクリーンショットの撮影に必要です</string>
+    <string name="settings_perm_overlay">他のアプリの上に重ねて表示</string>
+    <string name="settings_perm_overlay_desc">フローティングボタンを表示します</string>
+    <string name="settings_perm_notification">通知の権限</string>
+    <string name="settings_perm_notification_desc">フォアグラウンドサービスの通知に必要です</string>
+    <string name="settings_perm_boot">起動時に自動起動</string>
+    <string name="settings_perm_boot_desc">再起動後にフローティングツールバーを起動します</string>
+    <string name="settings_perm_battery">バッテリー最適化の対象外にする</string>
+    <string name="settings_perm_battery_desc">システムによるフローティングサービスの停止を防ぎます</string>
+    <string name="settings_perm_granted">有効</string>
+    <string name="settings_perm_denied">無効</string>
+    <string name="settings_rom_hint">MIUI / EMUI / ColorOS / OriginOS では、システム設定で「バックグラウンドでのポップアップ」と「自動起動」も許可する必要があります。許可しないと、バブルが停止されることがあります。</string>
+    <string name="settings_rom_open">メーカーの設定を開く</string>
+    <string name="settings_rom_detected">%1$s 端末を検出しました</string>
+
+    <!-- ==================== アプリについて ==================== -->
+    <string name="about_title">アプリについて</string>
+    <string name="about_version">バージョン %1$s</string>
+    <string name="about_license_title">ライセンス</string>
+    <string name="about_license_desc">GNU General Public License v3.0 に基づいて公開されています。自由に使用・改変・再配布できますが、派生作品も GPLv3 で公開する必要があります。</string>
+    <string name="about_repo">GitHub リポジトリ</string>
+    <string name="about_author_title">作者</string>
+    <string name="about_author_name">MapleYazuu</string>
+    <string name="about_author_desc">MapleYazuu が開発。GPLv3 でオープンソース化され、コミュニティとともにメンテナンスされています。</string>
+    <string name="about_thanks_title">謝辞</string>
+    <string name="about_thanks_desc">Jetpack Compose、OkHttp、Room、ML Kit、Coil をはじめとする優れたオープンソースプロジェクトに感謝します。</string>
+    <string name="about_check_update">アップデートを確認</string>
+    <string name="about_checking">確認中…</string>
+    <string name="about_up_to_date">最新バージョンです</string>
+    <string name="about_update_found">新しいバージョン %1$s があります</string>
+    <string name="about_update_download">ダウンロード</string>
+    <string name="about_check_fail">アップデートの確認に失敗しました：%1$s</string>
+
+    <!-- ==================== オーバーレイ ==================== -->
+    <string name="overlay_action_screenshot">スクリーンショット</string>
+    <string name="overlay_action_input">指令を選択</string>
+    <string name="overlay_action_history">履歴</string>
+    <string name="overlay_action_settings">設定</string>
+    <string name="overlay_capture_preview_title">スクリーンショットのプレビュー</string>
+    <string name="overlay_capture_confirm">確認してプリセットを選択</string>
+    <string name="overlay_capture_retry">もう一度キャプチャ</string>
+    <string name="overlay_capture_fail">キャプチャに失敗しました。アクセシビリティサービスが有効になっているか確認してください</string>
+    <string name="overlay_capture_processing">キャプチャ中…</string>
+    <string name="overlay_choose_preset">プリセットを選択</string>
+    <string name="overlay_result_title">AI の返信</string>
+    <string name="overlay_result_copy">コピー</string>
+    <string name="overlay_result_close">閉じる</string>
+    <string name="overlay_result_regenerate">再生成</string>
+    <string name="overlay_result_followup_hint">追加で質問…</string>
+    <string name="overlay_result_send">送信</string>
+    <string name="overlay_ocr_fallback">このモデルは画像に対応していないため、端末内 OCR でテキストを抽出しました</string>
+    <string name="overlay_no_preset">先にプリセットを選択または作成してください</string>
+    <string name="overlay_no_api_key">設定で %1$s の API Key を入力してください</string>
+    <string name="overlay_history_empty">まだ履歴がありません</string>
+    <string name="overlay_copied">コピーしました</string>
+
+    <!-- ==================== 共通 ==================== -->
+    <string name="common_back">戻る</string>
+    <string name="common_cancel">キャンセル</string>
+    <string name="common_delete">削除</string>
+    <string name="common_save">保存</string>
+    <string name="common_close">閉じる</string>
+    <string name="common_unknown">不明</string>
+
+    <!-- ==================== デバッグ用サンプル ==================== -->
+    <string name="vendor_xiaomi">Xiaomi</string>
+    <string name="vendor_huawei">Huawei</string>
+    <string name="vendor_oppo">OPPO</string>
+    <string name="vendor_vivo">vivo</string>
+    <string name="vendor_samsung">Samsung</string>
+    <!-- ==================== エラー ==================== -->
+    <string name="error_missing_api_key">設定で %1$s の API Key を入力してください</string>
+    <string name="error_http_auth">認証に失敗しました（%1$d）。API Key が正しいか、有効期限が切れていないか確認してください</string>
+    <string name="error_http_not_found">エンドポイントが見つかりません（%1$d）。Base URL とモデル名を確認してください</string>
+    <string name="error_http_rate_limit">リクエストが多すぎるか、利用枠を使い切りました（%1$d）。しばらくしてから再試行してください</string>
+    <string name="error_http_server">サーバーエラー（%1$d）。しばらくしてから再試行してください</string>
+    <string name="error_http_generic">リクエストに失敗しました（%1$d）</string>
+    <string name="error_network">ネットワークエラー：%1$s</string>
+    <string name="error_network_hint">接続を確認してください</string>
+    <string name="error_parse">レスポンスの解析に失敗しました：%1$s</string>
+    <string name="error_cancelled">キャンセルしました</string>
+    <string name="error_unknown_detail">不明なエラー：%1$s</string>
+    <!-- ==================== カスタムモデル ==================== -->
+    <string name="settings_custom_model">カスタムモデル</string>
+    <string name="settings_custom_model_hint">OpenAI 互換のサードパーティ API</string>
+    <string name="custom_field_name">表示名</string>
+    <string name="custom_field_base_url">ベース URL</string>
+    <string name="custom_field_model_id">モデル ID</string>
+    <string name="custom_field_vision">画像入力に対応</string>
+    <string name="custom_vision_off_note">オフの場合、スクリーンショットは端末内 OCR で文字を抽出して送信されます</string>
+    <string name="custom_url_hint">http(s):// がない場合は自動で補完します</string>
+    <string name="custom_error_model_id">モデル ID を入力してください</string>
+    <string name="preset_confirm_delete">削除を確認</string>
+    <string name="preset_reorder_hint">長押しでドラッグして並べ替え</string>
+    <string name="preset_delete_title">指令を削除</string>
+    <string name="preset_selected_count">%1$d 件を選択中</string>
+    <string name="preset_select_all">すべて選択</string>
+    <string name="preset_delete_selected_message">選択した %1$d 件の指令を削除しますか？この操作は元に戻せません。</string>
+    <string name="preset_deleted_multi">削除しました</string>
+    <string name="overlay_preview_pin">固定</string>
+    <string name="overlay_preview_unpin">固定解除</string>
+    <string name="overlay_preview_pin_toast_pinned">ウィンドウを固定しました</string>
+    <string name="overlay_preview_pin_toast_unpinned">固定を解除しました</string>
+    <string name="overlay_preset_default_set">デフォルト指令に設定しました</string>
+    <string name="overlay_no_preset_choose">プリセットがありません。先に作成してください</string>
+    <string name="overlay_open_preset_manager">プリセット管理</string>
+    <string name="overlay_drag_handle">ウィンドウをドラッグ</string>
+    <string name="tile_floating_label">フローティングツールバー</string>
+    <string name="tile_floating_on">フローティングツールバー：オン</string>
+    <string name="tile_floating_off">フローティングツールバー：オフ</string>
+    <string name="overlay_resize_handle">ウィンドウのサイズ変更</string>
+    <string name="overlay_capture_fail_running">スクリーンショットに失敗しました。再試行してください。続く場合はアクセシビリティサービスを再度有効にしてください。</string>
+    <string name="preset_create_title">プリセットを新規作成</string>
+    <string name="preset_create_name_hint">プリセット名（例：翻訳）</string>
+    <string name="preset_create_prompt_hint">AI に送るプロンプト内容</string>
+    <string name="preset_create_error_empty">名前とプロンプトを入力してください</string>
+    <string name="preset_create_cancel">キャンセル</string>
+</resources>

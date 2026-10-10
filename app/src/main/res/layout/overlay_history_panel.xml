@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  历史记录 / 预设指令选择面板（高级感重构）。
+  - 高度 WRAP_CONTENT，按内容自适应；列表区由 OverlayManager 设置
+    70% 屏幕高度上限，超出后内部滚动；
+  - 标题栏：标题居左、点阵拖拽把手居中、关闭居右，同一水平线垂直居中；
+  - 已删除右下角斜箭头（该窗口不需要手动调整大小）。
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/historyRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/historyContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_overlay_panel"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/overlay_panel_padding_h"
+        android:paddingTop="@dimen/overlay_panel_padding_v"
+        android:paddingEnd="@dimen/overlay_panel_padding_h"
+        android:paddingBottom="@dimen/overlay_panel_padding_v">
+
+        <LinearLayout
+            android:id="@+id/historyTitleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/historyTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/overlay_title_text_size"
+                android:textStyle="bold" />
+
+            <!-- 点阵拖拽把手：居中（左右两侧 weight=1 均分，保证中轴对称） -->
+            <ImageView
+                android:id="@+id/historyDragHandle"
+                android:layout_width="wrap_content"
+                android:clickable="true"
+                android:focusable="false"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/overlay_drag_handle"
+                android:minWidth="44dp"
+                android:minHeight="40dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="4dp"
+                android:src="@drawable/ic_drag_handle_dots" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/historyClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/overlay_row_padding"
+                android:paddingEnd="2dp"
+                android:text="@string/common_close"
+                android:textSize="@dimen/overlay_caption_text_size" />
+
+        </LinearLayout>
+
+        <!--
+          列表区：MaxHeightScrollView + wrap_content ——
+          内容短时自适应，内容长时按 maxHeight 内部滚动，不留大片空白。
+        -->
+        <com.screenshot.ai.overlay.MaxHeightScrollView
+            android:id="@+id/historyScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/overlay_panel_gap"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:id="@+id/historyContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </com.screenshot.ai.overlay.MaxHeightScrollView>
+
+        <TextView
+            android:id="@+id/historyEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/overlay_panel_gap"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="@string/overlay_history_empty"
+            android:textSize="@dimen/overlay_body_text_size"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</FrameLayout>

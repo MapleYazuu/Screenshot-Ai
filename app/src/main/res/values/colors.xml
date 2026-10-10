@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="window_background">#F8F9FA</color>
+    <color name="window_background_dark">#121317</color>
+    <!-- 悬浮球：半透明深紫罗兰 -->
+    <color name="overlay_bubble_bg">#E05B4FCF</color>
+    <!-- 悬浮面板：16dp 圆角半透明白色卡片（略带毛玻璃观感），避免生硬白方块 -->
+    <color name="overlay_panel_bg">#E8FFFFFF</color>
+    <color name="overlay_scrim">#26000000</color>
+    <!-- AI 回复卡片：极浅灰底 + 细描边 + 正文 #333 -->
+    <color name="overlay_result_bg">#EFFFFFFF</color>
+    <color name="overlay_result_stroke">#E8EAED</color>
+    <color name="overlay_result_text">#333333</color>
+    <!-- 追问输入框与主色按钮 -->
+    <color name="overlay_input_bg">#FFFFFF</color>
+    <color name="overlay_input_stroke">#D5D9E0</color>
+    <color name="overlay_primary">#5B4FCF</color>
+</resources>

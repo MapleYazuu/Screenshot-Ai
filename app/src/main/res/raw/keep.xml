@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  shrinkResources 保留清单（Release 资源收缩专用）。
+
+  这些资源不是被代码静态引用、就是被系统按名字查找，
+  资源收缩器无法通过静态分析发现它们，一旦被裁掉：
+  - 无障碍服务配置丢失 → 系统里开启服务后 takeScreenshot 能力失效；
+  - 备份规则丢失 → Android 12+ 的迁移行为回退到默认（可能把截图/密钥备份走）。
+  因此显式声明保留。
+-->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@xml/accessibility_service_config,@xml/data_extraction_rules" />

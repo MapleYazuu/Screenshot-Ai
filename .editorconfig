@@ -1,0 +1,28 @@
+# ============================================================================
+# 编辑器与 ktlint 统一风格配置
+# ============================================================================
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.{kt,kts}]
+max_line_length = 120
+# Compose 中大量使用 @Composable 注解与尾随逗号
+ij_kotlin_allow_trailing_comma = true
+ij_kotlin_allow_trailing_comma_on_call_site = true
+ktlint_function_naming_ignore_when_annotated_with = Composable
+ktlint_standard_function-naming = disabled
+# 允许通配符导入（Android 项目常见）
+ktlint_standard_no-wildcard-imports = disabled
+
+[*.{xml,json,yml,yaml,toml}]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false

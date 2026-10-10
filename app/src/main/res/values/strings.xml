@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Default strings (English) — 默认后备语言（Fallback）。
+  任何未在此处定义的文案都会回退到这里，因此新增 key 必须先加英文。
+  其他语言见：values-zh / values-ja / values-ko / values-ru
+-->
+<resources>
+    <string name="app_name">Screenshot AI</string>
+
+    <!-- ==================== Accessibility service ==================== -->
+    <string name="accessibility_service_label">Screenshot AI · Capture Service</string>
+    <string name="accessibility_service_summary">Captures the screen when you tap the floating button</string>
+    <string name="accessibility_service_description">Once enabled, tapping the floating button captures the current screen and sends it to your AI model. This service only captures when you explicitly tap the button; screenshots stay on your device.</string>
+
+    <!-- ==================== Notification ==================== -->
+    <string name="notif_channel_name">Floating toolbar</string>
+    <string name="notif_channel_desc">Keeps the floating toolbar alive</string>
+    <string name="notif_title">Screenshot AI is running</string>
+    <string name="notif_text">Tap the floating button to capture and ask</string>
+    <string name="notif_action_stop">Stop</string>
+
+    <!-- ==================== Main ==================== -->
+    <string name="main_subtitle">Capture, ask, done</string>
+    <string name="main_section_switch">Features</string>
+    <string name="main_floating_title">Floating toolbar</string>
+    <string name="main_floating_desc">Keeps a floating button on screen: tap to capture and ask instantly, long press for Capture / Compose / History / Settings</string>
+    <string name="main_section_entry">Explore</string>
+    <string name="main_entry_history">Ask history</string>
+    <string name="main_entry_preset">Prompt presets</string>
+    <string name="main_entry_about">About / GitHub</string>
+    <string name="main_version_format">Version %1$s</string>
+    <string name="main_service_killed">Floating service was reclaimed by the system; switch reset</string>
+    <string name="main_settings">Settings</string>
+    <string name="main_need_accessibility">Screenshot needs the accessibility service: tap to enable it</string>
+
+    <!-- ==================== History ==================== -->
+    <string name="history_title">Ask history</string>
+    <string name="history_search_hint">Search preset, prompt or reply…</string>
+    <string name="history_filter">Filter</string>
+    <string name="history_filter_provider">Filter by provider</string>
+    <string name="history_filter_model">Filter by model</string>
+    <string name="history_filter_reset">Reset</string>
+    <string name="history_filter_apply">Apply</string>
+    <string name="history_empty">No asks yet</string>
+    <string name="history_empty_desc">Tap the floating button to capture a screenshot and start</string>
+    <string name="history_deleted">Record deleted</string>
+    <string name="history_undo">Undo</string>
+    <string name="history_action_copy">Copy</string>
+    <string name="history_action_delete">Delete</string>
+    <string name="history_action_reask">Ask again</string>
+    <string name="history_action_share">Share</string>
+    <string name="history_label_prompt">Prompt</string>
+    <string name="history_label_reply">AI reply</string>
+    <string name="history_label_screenshot">Original screenshot</string>
+    <string name="history_image_missing">Screenshot file no longer exists</string>
+    <string name="history_copied">Copied to clipboard</string>
+    <string name="history_clipboard_label_preset">Preset</string>
+    <string name="history_clipboard_label_prompt">Prompt</string>
+    <string name="history_share_chooser">Share this record</string>
+
+    <!-- ==================== Presets ==================== -->
+    <string name="preset_title">Prompt presets</string>
+    <string name="preset_add">New preset</string>
+    <string name="preset_edit">Edit preset</string>
+    <string name="preset_field_name">Preset name</string>
+    <string name="preset_field_prompt">Prompt content</string>
+    <string name="preset_field_icon">Icon (optional, single emoji)</string>
+    <string name="preset_set_default">Set as default preset</string>
+    <string name="preset_default_badge">Default</string>
+    <string name="preset_import_clipboard">Import from clipboard</string>
+    <string name="preset_save">Save</string>
+    <string name="preset_cancel">Cancel</string>
+    <string name="preset_delete">Delete</string>
+    <string name="preset_deleted">Deleted successfully</string>
+    <string name="preset_empty">No presets yet. Tap + in the corner to create one.</string>
+    <string name="preset_builtin_hint">Built-in presets cannot be deleted; edit and save as a new one</string>
+    <string name="preset_error_name_empty">Please enter a preset name</string>
+    <string name="preset_error_prompt_empty">Please enter the prompt content</string>
+    <string name="preset_clipboard_empty">No text available in clipboard</string>
+
+    <!--
+      内置指令的提示词模板（发给模型的指令，非界面文案）。
+      保持与界面语言一致，用户切到日语时模型收到的也是日语指令；
+      输出语言另由 PromptTemplates.withReplyLanguageDirective 在末尾显式指定。
+    -->
+
+    <!-- ==================== Settings ==================== -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_section_model">Models</string>
+    <string name="settings_section_floating">Floating bubble</string>
+    <string name="settings_section_permission">Permissions</string>
+    <string name="settings_section_other">Other</string>
+    <string name="settings_default_model">Default model</string>
+    <string name="settings_api_key">API Key</string>
+    <string name="settings_api_key_hint">Paste your API key</string>
+    <string name="settings_api_key_saved">Encrypted and saved</string>
+    <string name="settings_clear_key">Clear key</string>
+    <string name="settings_test_connection">Test connection</string>
+    <string name="settings_testing">Testing…</string>
+    <string name="settings_test_ok">Connection OK</string>
+    <string name="settings_test_fail">Connection failed: %1$s</string>
+    <string name="settings_vision_supported">Supports image input</string>
+    <string name="settings_vision_unsupported">No image support, falls back to on-device OCR</string>
+    <string name="settings_base_url">Endpoint</string>
+    <string name="settings_floating_alpha">Bubble opacity</string>
+    <string name="settings_floating_edge">Auto hide at screen edge</string>
+    <string name="settings_low_quality">Low quality mode (512px, saves tokens)</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_system">Follow system</string>
+    <string name="settings_language_zh">简体中文</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_ja">日本語</string>
+    <string name="settings_language_ko">한국어</string>
+    <string name="settings_language_ru">Русский</string>
+    <string name="settings_language_hint">Also selects the language the AI replies in.</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_system">Follow system</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_about">About / GitHub</string>
+    <string name="settings_perm_accessibility">Accessibility capture</string>
+    <string name="settings_perm_accessibility_desc">Required to take screenshots</string>
+    <string name="settings_perm_overlay">Display over other apps</string>
+    <string name="settings_perm_overlay_desc">Shows the floating button</string>
+    <string name="settings_perm_notification">Notification permission</string>
+    <string name="settings_perm_notification_desc">Required for the foreground service notification</string>
+    <string name="settings_perm_boot">Start on boot</string>
+    <string name="settings_perm_boot_desc">Launch the floating toolbar after reboot</string>
+    <string name="settings_perm_battery">Ignore battery optimization</string>
+    <string name="settings_perm_battery_desc">Prevents the system from killing the floating service</string>
+    <string name="settings_perm_granted">Enabled</string>
+    <string name="settings_perm_denied">Disabled</string>
+    <string name="settings_rom_hint">MIUI / EMUI / ColorOS / OriginOS also require allowing "background pop-up" and "auto start" in system settings, otherwise the bubble may be killed.</string>
+    <string name="settings_rom_open">Open vendor settings</string>
+    <string name="settings_rom_detected">%1$s device detected</string>
+
+    <!-- ==================== About ==================== -->
+    <string name="about_title">About</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_license_title">License</string>
+    <string name="about_license_desc">Released under the GNU General Public License v3.0. You may use, modify and redistribute it freely, but derivative works must also be open sourced under GPLv3.</string>
+    <string name="about_repo">GitHub repository</string>
+    <string name="about_author_title">Author</string>
+    <string name="about_author_name">MapleYazuu</string>
+    <string name="about_author_desc">Developed by MapleYazuu. Open source under GPLv3, maintained together with the community.</string>
+    <string name="about_thanks_title">Credits</string>
+    <string name="about_thanks_desc">Thanks to Jetpack Compose, OkHttp, Room, ML Kit, Coil and other great open source projects.</string>
+    <string name="about_check_update">Check for updates</string>
+    <string name="about_checking">Checking…</string>
+    <string name="about_up_to_date">You are on the latest version</string>
+    <string name="about_update_found">New version %1$s available</string>
+    <string name="about_update_download">Download</string>
+    <string name="about_check_fail">Update check failed: %1$s</string>
+
+    <!-- ==================== Overlay ==================== -->
+    <string name="overlay_action_screenshot">Capture</string>
+    <string name="overlay_action_input">Select preset</string>
+    <string name="overlay_action_history">History</string>
+    <string name="overlay_action_settings">Settings</string>
+    <string name="overlay_capture_preview_title">Screenshot preview</string>
+    <string name="overlay_capture_confirm">Confirm and pick a preset</string>
+    <string name="overlay_capture_retry">Capture again</string>
+    <string name="overlay_capture_fail">Capture failed, please make sure the accessibility service is on</string>
+    <string name="overlay_capture_processing">Capturing…</string>
+    <string name="overlay_choose_preset">Choose a preset</string>
+    <string name="overlay_result_title">AI reply</string>
+    <string name="overlay_result_copy">Copy</string>
+    <string name="overlay_result_close">Close</string>
+    <string name="overlay_result_regenerate">Regenerate</string>
+    <string name="overlay_result_followup_hint">Follow up…</string>
+    <string name="overlay_result_send">Send</string>
+    <string name="overlay_ocr_fallback">This model has no vision support; text was extracted with on-device OCR</string>
+    <string name="overlay_no_preset">Please choose or create a preset first</string>
+    <string name="overlay_no_api_key">Please fill in the API key for %1$s in Settings</string>
+    <string name="overlay_history_empty">No history yet</string>
+    <string name="overlay_copied">Copied</string>
+
+    <!-- ==================== Errors ==================== -->
+    <string name="error_missing_api_key">Please fill in the API key for %1$s in Settings</string>
+    <string name="error_http_auth">Authentication failed (%1$d). Check that your API key is valid and not expired.</string>
+    <string name="error_http_not_found">Endpoint not found (%1$d). Check the Base URL and the model name.</string>
+    <string name="error_http_rate_limit">Too many requests or quota exhausted (%1$d). Please retry later.</string>
+    <string name="error_http_server">Server error (%1$d). Please retry later.</string>
+    <string name="error_http_generic">Request failed (%1$d).</string>
+    <string name="error_network">Network error: %1$s</string>
+    <string name="error_network_hint">please check your connection</string>
+    <string name="error_parse">Failed to parse the response: %1$s</string>
+    <string name="error_cancelled">Cancelled</string>
+    <string name="error_unknown_detail">Unknown error: %1$s</string>
+
+    <!-- ==================== Common ==================== -->
+    <string name="common_back">Back</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="common_delete">Delete</string>
+    <string name="common_save">Save</string>
+    <string name="common_close">Close</string>
+    <string name="common_unknown">Unknown</string>
+
+    <!-- ==================== Debug examples ==================== -->
+    <string name="vendor_xiaomi">Xiaomi</string>
+    <string name="vendor_huawei">Huawei</string>
+    <string name="vendor_oppo">OPPO</string>
+    <string name="vendor_vivo">vivo</string>
+    <string name="vendor_samsung">Samsung</string>
+    <!-- ==================== Custom model ==================== -->
+    <string name="settings_custom_model">Custom model</string>
+    <string name="settings_custom_model_hint">Any OpenAI-compatible third-party API</string>
+    <string name="custom_field_name">Display name</string>
+    <string name="custom_field_base_url">Base URL</string>
+    <string name="custom_field_model_id">Model ID</string>
+    <string name="custom_field_vision">Supports image input</string>
+    <string name="custom_vision_off_note">When off, screenshots are OCR-extracted on device and sent as text</string>
+    <string name="custom_url_hint">Missing http(s):// will be added automatically</string>
+    <string name="custom_error_model_id">Please enter a model ID</string>
+    <string name="preset_confirm_delete">Confirm delete</string>
+    <string name="preset_reorder_hint">Long press and drag to reorder</string>
+    <string name="preset_delete_title">Delete preset</string>
+    <string name="preset_selected_count">Selected %1$d</string>
+    <string name="preset_select_all">Select all</string>
+    <string name="preset_delete_selected_message">Delete %1$d selected presets? This action cannot be undone.</string>
+    <string name="preset_deleted_multi">Deleted</string>
+    <string name="overlay_preview_pin">Pin</string>
+    <string name="overlay_preview_unpin">Unpin</string>
+    <string name="overlay_preview_pin_toast_pinned">Window pinned</string>
+    <string name="overlay_preview_pin_toast_unpinned">Window unpinned</string>
+    <string name="overlay_preset_default_set">Default preset set</string>
+    <string name="overlay_no_preset_choose">No presets yet. Create one below or open the manager.</string>
+    <string name="overlay_open_preset_manager">Preset manager</string>
+    <string name="overlay_drag_handle">Drag window</string>
+    <string name="tile_floating_label">Floating toolbar</string>
+    <string name="tile_floating_on">Floating toolbar on</string>
+    <string name="tile_floating_off">Floating toolbar off</string>
+    <string name="overlay_resize_handle">Resize window</string>
+    <string name="overlay_capture_fail_running">Capture failed, please retry. If it keeps failing, re-enable the accessibility service.</string>
+    <string name="preset_create_title">New preset</string>
+    <string name="preset_create_name_hint">Preset name (e.g. Translate)</string>
+    <string name="preset_create_prompt_hint">Prompt content sent to the AI</string>
+    <string name="preset_create_error_empty">Please fill in both name and prompt</string>
+    <string name="preset_create_cancel">Cancel</string>
+</resources>

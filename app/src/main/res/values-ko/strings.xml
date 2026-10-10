@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  한국어(Korean) 문자열 리소스입니다.
+  여기에 없는 key는 values/strings.xml(영어)로 대체됩니다.
+  다른 언어: values-zh-rCN / values-ja / values-ko / values-ru
+-->
+<resources>
+    <string name="app_name">Screenshot AI</string>
+
+    <!-- ==================== 접근성 서비스 ==================== -->
+    <string name="accessibility_service_label">Screenshot AI · 캡처 서비스</string>
+    <string name="accessibility_service_summary">플로팅 버튼을 탭하면 화면을 캡처합니다</string>
+    <string name="accessibility_service_description">사용 설정하면 플로팅 버튼을 탭할 때 현재 화면을 캡처해 AI 모델로 전송합니다. 이 서비스는 버튼을 직접 탭할 때만 캡처하며, 스크린샷은 기기에만 저장됩니다.</string>
+
+    <!-- ==================== 알림 ==================== -->
+    <string name="notif_channel_name">플로팅 도구 모음</string>
+    <string name="notif_channel_desc">플로팅 도구 모음을 계속 실행합니다</string>
+    <string name="notif_title">Screenshot AI가 실행 중입니다</string>
+    <string name="notif_text">플로팅 버튼을 탭해 캡처하고 질문하세요</string>
+    <string name="notif_action_stop">중지</string>
+
+    <!-- ==================== 메인 ==================== -->
+    <string name="main_subtitle">캡처하고, 묻고, 끝</string>
+    <string name="main_section_switch">기능</string>
+    <string name="main_floating_title">플로팅 도구 모음</string>
+    <string name="main_floating_desc">화면에 플로팅 버튼을 띄워 둡니다. 탭하면 곧바로 캡처해 질문하고, 길게 누르면 캡처 / 입력 / 기록 / 설정을 엽니다</string>
+    <string name="main_section_entry">메뉴</string>
+    <string name="main_entry_history">질문 기록</string>
+    <string name="main_entry_preset">프롬프트 프리셋</string>
+    <string name="main_entry_about">앱 정보 / GitHub</string>
+    <string name="main_version_format">버전 %1$s</string>
+    <string name="main_service_killed">플로팅 서비스가 시스템에 의해 회수되어 스위치를 초기화했습니다</string>
+    <string name="main_settings">설정</string>
+    <string name="main_need_accessibility">스크린샷에는 접근성 서비스가 필요합니다. 탭해서 사용 설정하세요</string>
+
+    <!-- ==================== 기록 ==================== -->
+    <string name="history_title">질문 기록</string>
+    <string name="history_search_hint">프리셋, 프롬프트 또는 답변 검색…</string>
+    <string name="history_filter">필터</string>
+    <string name="history_filter_provider">Provider로 필터링</string>
+    <string name="history_filter_model">모델로 필터링</string>
+    <string name="history_filter_reset">초기화</string>
+    <string name="history_filter_apply">적용</string>
+    <string name="history_empty">아직 질문이 없습니다</string>
+    <string name="history_empty_desc">플로팅 버튼을 탭해 스크린샷을 찍고 시작해 보세요</string>
+    <string name="history_deleted">기록을 삭제했습니다</string>
+    <string name="history_undo">실행 취소</string>
+    <string name="history_action_copy">복사</string>
+    <string name="history_action_delete">삭제</string>
+    <string name="history_action_reask">다시 질문</string>
+    <string name="history_action_share">공유</string>
+    <string name="history_label_prompt">프롬프트</string>
+    <string name="history_label_reply">AI 답변</string>
+    <string name="history_label_screenshot">원본 스크린샷</string>
+    <string name="history_image_missing">스크린샷 파일이 더 이상 존재하지 않습니다</string>
+    <string name="history_copied">클립보드에 복사했습니다</string>
+    <string name="history_clipboard_label_preset">프리셋</string>
+    <string name="history_clipboard_label_prompt">프롬프트</string>
+    <string name="history_share_chooser">이 기록 공유</string>
+
+    <!-- ==================== 프리셋 ==================== -->
+    <string name="preset_title">프롬프트 프리셋</string>
+    <string name="preset_add">새 프리셋</string>
+    <string name="preset_edit">프리셋 편집</string>
+    <string name="preset_field_name">프리셋 이름</string>
+    <string name="preset_field_prompt">프롬프트 내용</string>
+    <string name="preset_field_icon">아이콘(선택, 이모지 1개)</string>
+    <string name="preset_set_default">기본 프리셋으로 설정</string>
+    <string name="preset_default_badge">기본</string>
+    <string name="preset_import_clipboard">클립보드에서 가져오기</string>
+    <string name="preset_save">저장</string>
+    <string name="preset_cancel">취소</string>
+    <string name="preset_delete">삭제</string>
+    <string name="preset_deleted">삭제되었습니다</string>
+    <string name="preset_empty">아직 명령어가 없습니다. 오른쪽 아래 + 를 눌러 만들어 보세요.</string>
+    <string name="preset_builtin_hint">내장 프리셋은 삭제할 수 없습니다. 편집한 뒤 새 프리셋으로 저장하세요</string>
+    <string name="preset_error_name_empty">프리셋 이름을 입력해 주세요</string>
+    <string name="preset_error_prompt_empty">프롬프트 내용을 입력해 주세요</string>
+    <string name="preset_clipboard_empty">클립보드에 사용할 수 있는 텍스트가 없습니다</string>
+
+    <!--
+      내장 프리셋의 프롬프트 템플릿입니다(모델에 보내는 지시이며 화면에 표시되는 문구가 아닙니다).
+      인터페이스 언어와 일치시킵니다. 사용자가 한국어로 전환하면 모델도 한국어 지시를 받습니다.
+      출력 언어는 PromptTemplates.withReplyLanguageDirective가 끝에서 명시적으로 지정합니다.
+    -->
+
+    <!-- ==================== 설정 ==================== -->
+    <string name="settings_title">설정</string>
+    <string name="settings_section_model">모델</string>
+    <string name="settings_section_floating">플로팅 버블</string>
+    <string name="settings_section_permission">권한</string>
+    <string name="settings_section_other">기타</string>
+    <string name="settings_default_model">기본 모델</string>
+    <string name="settings_api_key">API Key</string>
+    <string name="settings_api_key_hint">API Key를 붙여넣으세요</string>
+    <string name="settings_api_key_saved">암호화하여 저장했습니다</string>
+    <string name="settings_clear_key">Key 지우기</string>
+    <string name="settings_test_connection">연결 테스트</string>
+    <string name="settings_testing">테스트 중…</string>
+    <string name="settings_test_ok">연결 성공</string>
+    <string name="settings_test_fail">연결 실패: %1$s</string>
+    <string name="settings_vision_supported">이미지 입력 지원</string>
+    <string name="settings_vision_unsupported">이미지 미지원, 기기 내 OCR로 대체합니다</string>
+    <string name="settings_base_url">엔드포인트</string>
+    <string name="settings_floating_alpha">버블 불투명도</string>
+    <string name="settings_floating_edge">화면 가장자리에서 자동 숨김</string>
+    <string name="settings_low_quality">저화질 모드(512px, 토큰 절약)</string>
+    <string name="settings_language">언어</string>
+    <string name="settings_language_system">시스템 설정 따르기</string>
+    <string name="settings_language_zh">简体中文</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_ja">日本語</string>
+    <string name="settings_language_ko">한국어</string>
+    <string name="settings_language_ru">Русский</string>
+    <string name="settings_language_hint">AI가 답변하는 언어도 함께 변경됩니다.</string>
+    <string name="settings_theme">테마</string>
+    <string name="settings_theme_system">시스템 설정 따르기</string>
+    <string name="settings_theme_light">라이트</string>
+    <string name="settings_theme_dark">다크</string>
+    <string name="settings_about">앱 정보 / GitHub</string>
+    <string name="settings_perm_accessibility">접근성 캡처</string>
+    <string name="settings_perm_accessibility_desc">스크린샷 촬영에 필요합니다</string>
+    <string name="settings_perm_overlay">다른 앱 위에 표시</string>
+    <string name="settings_perm_overlay_desc">플로팅 버튼을 표시합니다</string>
+    <string name="settings_perm_notification">알림 권한</string>
+    <string name="settings_perm_notification_desc">포그라운드 서비스 알림에 필요합니다</string>
+    <string name="settings_perm_boot">부팅 시 시작</string>
+    <string name="settings_perm_boot_desc">재부팅 후 플로팅 도구 모음을 실행합니다</string>
+    <string name="settings_perm_battery">배터리 최적화 무시</string>
+    <string name="settings_perm_battery_desc">시스템이 플로팅 서비스를 종료하지 않도록 합니다</string>
+    <string name="settings_perm_granted">사용</string>
+    <string name="settings_perm_denied">사용 안 함</string>
+    <string name="settings_rom_hint">MIUI / EMUI / ColorOS / OriginOS에서는 시스템 설정에서 \'백그라운드 팝업\'과 \'자동 시작\'도 허용해야 합니다. 그렇지 않으면 버블이 종료될 수 있습니다.</string>
+    <string name="settings_rom_open">제조사 설정 열기</string>
+    <string name="settings_rom_detected">%1$s 기기를 감지했습니다</string>
+
+    <!-- ==================== 앱 정보 ==================== -->
+    <string name="about_title">앱 정보</string>
+    <string name="about_version">버전 %1$s</string>
+    <string name="about_license_title">라이선스</string>
+    <string name="about_license_desc">GNU General Public License v3.0에 따라 공개되었습니다. 자유롭게 사용, 수정, 재배포할 수 있지만 파생 저작물도 GPLv3로 공개해야 합니다.</string>
+    <string name="about_repo">GitHub 저장소</string>
+    <string name="about_author_title">작성자</string>
+    <string name="about_author_name">MapleYazuu</string>
+    <string name="about_author_desc">MapleYazuu가 개발했습니다. GPLv3 오픈 소스로 커뮤니티와 함께 유지 관리합니다.</string>
+    <string name="about_thanks_title">감사의 글</string>
+    <string name="about_thanks_desc">Jetpack Compose, OkHttp, Room, ML Kit, Coil 등 훌륭한 오픈 소스 프로젝트에 감사드립니다.</string>
+    <string name="about_check_update">업데이트 확인</string>
+    <string name="about_checking">확인 중…</string>
+    <string name="about_up_to_date">최신 버전입니다</string>
+    <string name="about_update_found">새 버전 %1$s 사용 가능</string>
+    <string name="about_update_download">다운로드</string>
+    <string name="about_check_fail">업데이트 확인 실패: %1$s</string>
+
+    <!-- ==================== 오버레이 ==================== -->
+    <string name="overlay_action_screenshot">스크린샷</string>
+    <string name="overlay_action_input">명령어 선택</string>
+    <string name="overlay_action_history">기록</string>
+    <string name="overlay_action_settings">설정</string>
+    <string name="overlay_capture_preview_title">스크린샷 미리보기</string>
+    <string name="overlay_capture_confirm">확인 후 프리셋 선택</string>
+    <string name="overlay_capture_retry">다시 캡처</string>
+    <string name="overlay_capture_fail">캡처에 실패했습니다. 접근성 서비스가 켜져 있는지 확인해 주세요</string>
+    <string name="overlay_capture_processing">캡처 중…</string>
+    <string name="overlay_choose_preset">프리셋 선택</string>
+    <string name="overlay_result_title">AI 답변</string>
+    <string name="overlay_result_copy">복사</string>
+    <string name="overlay_result_close">닫기</string>
+    <string name="overlay_result_regenerate">다시 생성</string>
+    <string name="overlay_result_followup_hint">추가 질문…</string>
+    <string name="overlay_result_send">전송</string>
+    <string name="overlay_ocr_fallback">이 모델은 이미지를 지원하지 않아 기기 내 OCR로 텍스트를 추출했습니다</string>
+    <string name="overlay_no_preset">먼저 명령어를 선택하거나 만들어 주세요</string>
+    <string name="overlay_no_api_key">설정에서 %1$s의 API Key를 입력해 주세요</string>
+    <string name="overlay_history_empty">아직 기록이 없습니다</string>
+    <string name="overlay_copied">복사했습니다</string>
+
+    <!-- ==================== 공통 ==================== -->
+    <string name="common_back">뒤로</string>
+    <string name="common_cancel">취소</string>
+    <string name="common_delete">삭제</string>
+    <string name="common_save">저장</string>
+    <string name="common_close">닫기</string>
+    <string name="common_unknown">알 수 없음</string>
+
+    <!-- ==================== 디버그 예제 ==================== -->
+    <string name="vendor_xiaomi">Xiaomi</string>
+    <string name="vendor_huawei">Huawei</string>
+    <string name="vendor_oppo">OPPO</string>
+    <string name="vendor_vivo">vivo</string>
+    <string name="vendor_samsung">Samsung</string>
+    <!-- ==================== 오류 ==================== -->
+    <string name="error_missing_api_key">설정에서 %1$s의 API Key를 입력해 주세요</string>
+    <string name="error_http_auth">인증에 실패했습니다(%1$d). API Key가 올바른지, 만료되지 않았는지 확인해 주세요</string>
+    <string name="error_http_not_found">엔드포인트를 찾을 수 없습니다(%1$d). Base URL과 모델 이름을 확인해 주세요</string>
+    <string name="error_http_rate_limit">요청이 너무 많거나 할당량이 소진되었습니다(%1$d). 잠시 후 다시 시도해 주세요</string>
+    <string name="error_http_server">서버 오류(%1$d). 잠시 후 다시 시도해 주세요</string>
+    <string name="error_http_generic">요청에 실패했습니다(%1$d)</string>
+    <string name="error_network">네트워크 오류: %1$s</string>
+    <string name="error_network_hint">연결 상태를 확인해 주세요</string>
+    <string name="error_parse">응답을 해석하지 못했습니다: %1$s</string>
+    <string name="error_cancelled">취소되었습니다</string>
+    <string name="error_unknown_detail">알 수 없는 오류: %1$s</string>
+    <!-- ==================== 사용자 지정 모델 ==================== -->
+    <string name="settings_custom_model">사용자 지정 모델</string>
+    <string name="settings_custom_model_hint">OpenAI 호환 서드파티 API</string>
+    <string name="custom_field_name">표시 이름</string>
+    <string name="custom_field_base_url">기본 URL</string>
+    <string name="custom_field_model_id">모델 ID</string>
+    <string name="custom_field_vision">이미지 입력 지원</string>
+    <string name="custom_vision_off_note">꺼짐: 스크린샷을 기기 내 OCR로 추출해 텍스트로 전송합니다</string>
+    <string name="custom_url_hint">http(s)://가 없으면 자동으로 추가됩니다</string>
+    <string name="custom_error_model_id">모델 ID를 입력해 주세요</string>
+    <string name="preset_confirm_delete">삭제 확인</string>
+    <string name="preset_reorder_hint">길게 눌러 드래그하여 정렬</string>
+    <string name="preset_delete_title">명령어 삭제</string>
+    <string name="preset_selected_count">%1$d개 선택됨</string>
+    <string name="preset_select_all">모두 선택</string>
+    <string name="preset_delete_selected_message">선택한 %1$d개 명령어를 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.</string>
+    <string name="preset_deleted_multi">삭제되었습니다</string>
+    <string name="overlay_preview_pin">고정</string>
+    <string name="overlay_preview_unpin">고정 해제</string>
+    <string name="overlay_preview_pin_toast_pinned">창이 고정되었습니다</string>
+    <string name="overlay_preview_pin_toast_unpinned">고정이 해제되었습니다</string>
+    <string name="overlay_preset_default_set">기본 명령어로 설정되었습니다</string>
+    <string name="overlay_no_preset_choose">명령어가 없습니다. 먼저 만들어 주세요</string>
+    <string name="overlay_open_preset_manager">명령어 관리</string>
+    <string name="overlay_drag_handle">창 드래그</string>
+    <string name="tile_floating_label">플로팅 도구 모음</string>
+    <string name="tile_floating_on">플로팅 도구 모음 켜짐</string>
+    <string name="tile_floating_off">플로팅 도구 모음 꺼짐</string>
+    <string name="overlay_resize_handle">창 크기 조절</string>
+    <string name="overlay_capture_fail_running">스크린샷에 실패했습니다. 다시 시도해 주세요. 계속 실패하면 접근성 서비스를 다시 활성화하세요.</string>
+    <string name="preset_create_title">새 프리셋</string>
+    <string name="preset_create_name_hint">프리셋 이름 (예: 번역)</string>
+    <string name="preset_create_prompt_hint">AI에 보낼 프롬프트 내용</string>
+    <string name="preset_create_error_empty">이름과 프롬프트를 모두 입력해 주세요</string>
+    <string name="preset_create_cancel">취소</string>
+</resources>

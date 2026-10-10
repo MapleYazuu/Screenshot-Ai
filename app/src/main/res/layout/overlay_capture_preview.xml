@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  截图预览（修复：拖拽把手被 ScrollView 拦截 + 高级感布局）。
+  - 标题栏、按钮行都放在滚动区**之外**：点阵把手不再被 ScrollView 抢走 MOVE 事件，
+    按住拖动必定生效；
+  - 只有「图片 + 提示」在 MaxHeightScrollView 里，内容超限时内部滚动；
+  - 窗口高度 WRAP_CONTENT：截图失败时只有标题 + 提示 + 按钮的高度，无留白；
+  - 标题栏：标题居左、点阵把手居中、固定图钉居右，垂直居中对齐；
+  - 右下角保留缩放把手。
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/previewRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/overlay_result_shadow_margin">
+
+    <LinearLayout
+        android:id="@+id/previewContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_overlay_panel"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/overlay_panel_padding_h"
+        android:paddingTop="@dimen/overlay_panel_padding_v"
+        android:paddingEnd="@dimen/overlay_panel_padding_h"
+        android:paddingBottom="@dimen/overlay_panel_padding_v">
+
+        <!-- 标题行：标题（左）+ 点阵拖拽把手（居中）+ 固定图钉（右）；把手 clickable 保证手势流完整 -->
+        <LinearLayout
+            android:id="@+id/previewTitleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/previewTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/overlay_capture_preview_title"
+                android:textSize="@dimen/overlay_title_text_size"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/previewDragHandle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="@string/overlay_drag_handle"
+                android:focusable="false"
+                android:minWidth="44dp"
+                android:minHeight="40dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="4dp"
+                android:src="@drawable/ic_drag_handle_dots" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/previewPin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_pin_outline"
+                android:gravity="center_vertical"
+                android:minWidth="44dp"
+                android:minHeight="40dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="4dp" />
+
+        </LinearLayout>
+
+        <!-- 内容滚动区：只有图片与提示在这里，超限（屏幕 70%）内部滚动 -->
+        <com.screenshot.ai.overlay.MaxHeightScrollView
+            android:id="@+id/previewScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/overlay_panel_gap"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 预览图：等比缩放到 overlay_preview_max_* 之内 -->
+                <ImageView
+                    android:id="@+id/previewImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/overlay_capture_preview_title"
+                    android:maxWidth="@dimen/overlay_preview_max_width"
+                    android:maxHeight="@dimen/overlay_preview_max_height"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:id="@+id/previewTip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="24dp"
+                    android:textSize="@dimen/overlay_body_text_size"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </com.screenshot.ai.overlay.MaxHeightScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/overlay_panel_gap"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/previewRetry"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_overlay_action_button"
+                android:gravity="center"
+                android:minHeight="@dimen/overlay_button_height"
+                android:text="@string/overlay_capture_retry"
+                android:textSize="@dimen/overlay_body_text_size" />
+
+            <TextView
+                android:id="@+id/previewConfirm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/overlay_row_gap"
+                android:layout_weight="1"
+                android:background="@drawable/bg_overlay_action_button"
+                android:gravity="center"
+                android:minHeight="@dimen/overlay_button_height"
+                android:text="@string/overlay_capture_confirm"
+                android:textSize="@dimen/overlay_body_text_size" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/previewCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/overlay_row_gap"
+            android:gravity="center"
+            android:minHeight="@dimen/overlay_button_height"
+            android:text="@string/common_cancel"
+            android:textSize="@dimen/overlay_body_text_size" />
+
+    </LinearLayout>
+
+    <!-- 右下角缩放把手：按住拖动调整窗口大小（与右上角移动把手严格区分） -->
+    <ImageView
+        android:id="@+id/previewResizeGrip"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="2dp"
+        android:contentDescription="@string/overlay_resize_handle"
+        android:src="@drawable/ic_resize_corner" />
+
+</FrameLayout>

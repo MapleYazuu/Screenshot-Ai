@@ -1,0 +1,156 @@
+name: 🐞 Bug 报告
+description: 报告一个可复现的缺陷，帮助我们定位并修复问题
+title: "[BUG] "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你花时间填写这份报告！🙏
+
+        提交之前请先确认：
+        - 已搜索过 [已有 Issue](https://github.com/MapleYazuu/Screenshot-AI/issues)，没有重复。
+        - 已阅读 README 的 **常见问题 FAQ**。
+        - 日志与截图中**不包含 API Key**（请务必抹掉，Key 泄露请立刻到厂商控制台吊销）。
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: 提交前自查
+      options:
+        - label: 我已搜索过现有 Issue，确认这不是重复问题
+          required: true
+        - label: 我已阅读 README 的常见问题 FAQ
+          required: true
+        - label: 我提交的日志与截图中不包含任何 API Key 或敏感信息
+          required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: 设备型号
+      description: 手机品牌与型号，例如「小米 14」「华为 Mate 60 Pro」「Pixel 7」
+      placeholder: 小米 14
+    validations:
+      required: true
+
+  - type: input
+    id: os_version
+    attributes:
+      label: 系统版本
+      description: 系统名称与 Android 版本，例如「HyperOS 1.0 / Android 14」「EMUI 13 / Android 12」
+      placeholder: HyperOS 1.0 / Android 14
+    validations:
+      required: true
+
+  - type: input
+    id: app_version
+    attributes:
+      label: App 版本
+      description: 在「设置 → 关于」中查看，或填写 APK 文件名
+      placeholder: 3.1.0 (versionCode 310)
+    validations:
+      required: true
+
+  - type: input
+    id: provider_model
+    attributes:
+      label: AI Provider 与模型
+      description: 出问题时选择的厂商与模型名，例如「DeepSeek / deepseek-flash」
+      placeholder: DeepSeek / deepseek-flash
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请精确描述「点了哪里、做了什么」，越具体越好
+      placeholder: |
+        1. 打开悬浮球并开启无障碍服务
+        2. 打开浏览器，访问某个网页
+        3. 单击悬浮球
+        4. 结果小窗出现后立刻消失
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+      placeholder: 结果小窗应持续显示并逐字输出 AI 的回答
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      description: 如果有错误提示，请原样粘贴（包含 HTTP 状态码与厂商返回的 message）
+      placeholder: 小窗闪现后消失，日志中有 NullPointerException
+    validations:
+      required: true
+
+  - type: dropdown
+    id: accessibility_enabled
+    attributes:
+      label: 是否已开启无障碍服务？
+      description: 设置 → 无障碍 → 已安装的服务 → Screenshot AI
+      options:
+        - 已开启
+        - 未开启
+        - 不确定 / 找不到入口
+    validations:
+      required: true
+
+  - type: dropdown
+    id: overlay_enabled
+    attributes:
+      label: 是否已授予悬浮窗权限？
+      description: 设置 → 应用 → 特殊权限 → 显示在其他应用的上层
+      options:
+        - 已授予
+        - 未授予
+        - 不确定 / 找不到入口
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: 复现频率
+      options:
+        - 每次必现
+        - 经常出现
+        - 偶尔出现
+        - 只出现过一次
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志 / 截图
+      description: |
+        推荐抓取方式（请先抹掉 API Key）：
+
+        ```bash
+        adb logcat -c && adb logcat | grep -i ScreenshotAi
+        ```
+
+        也可以直接把日志文件或截图拖进输入框上传。
+      placeholder: 粘贴日志或上传截图
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息
+      description: 其他可能有用的上下文，例如是否在分屏、是否使用中转 Base URL、是否在受保护界面截图等
+    validations:
+      required: false
